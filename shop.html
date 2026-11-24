@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mango Jack · Shop (Draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-hero="1">
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+
+<main id="main">
+  <section class="media cat-band" aria-label="Collection banner" style="height:58vh">
+    <span class="note">Collection banner · full-bleed lifestyle image per category · light text</span>
+    <span class="ph-name" id="bandLabel">Shop all image</span>
+    <div class="hero-copy">
+      <span class="eyebrow" id="bandEyebrow">Summer 26</span>
+      <h1 class="display" id="shopTitle" style="font-size:clamp(52px,7vw,104px)">Shop all</h1>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <nav class="tabs" aria-label="Categories" id="tabs">
+      <a href="shop.html#all" data-c="all">All</a>
+      <a href="shop.html#tees" data-c="tees">Tees</a>
+      <a href="shop.html#shorts" data-c="shorts">Shorts</a>
+      <a href="shop.html#headwear" data-c="headwear">Headwear</a>
+    </nav>
+    <div class="shop-bar">
+      <span id="count" aria-live="polite"></span>
+      <label>
+        <span class="sr">Sort by</span>
+        <select id="sort">
+          <option value="feat">Featured</option>
+          <option value="az">Name A to Z</option>
+          <option value="za">Name Z to A</option>
+        </select>
+      </label>
+    </div>
+    <div class="pgrid" id="grid" style="position:relative;padding-bottom:96px">
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+{
+  const { PRODUCTS, CATS, tile } = MJ;
+  const BLURB = { all: 'Summer 26', tees: 'Unisex · cut for the beach', shorts: 'Saltwater to sofa', headwear: 'Sun on, glare off' };
+  const grid = document.getElementById('grid');
+  const sortSel = document.getElementById('sort');
+  const render = () => {
+    const c = (location.hash.slice(1) || 'all');
+    const cat = CATS[c] ? c : 'all';
+    let list = cat === 'all' ? PRODUCTS.slice() : PRODUCTS.filter((p) => p.cat === cat);
+    if (sortSel.value === 'az') list.sort((a, b) => a.name.localeCompare(b.name));
+    if (sortSel.value === 'za') list.sort((a, b) => b.name.localeCompare(a.name));
+    grid.innerHTML = '<span class="note" style="top:-36px;left:0">Product grid · square flatlays on light grey · name, price, colours</span>' + list.map(tile).join('');
+    document.getElementById('shopTitle').textContent = cat === 'all' ? 'Shop all' : CATS[cat];
+    document.getElementById('bandLabel').textContent = (cat === 'all' ? 'Shop all' : CATS[cat]) + ' image';
+    document.getElementById('bandEyebrow').textContent = BLURB[cat];
+    document.getElementById('count').textContent = list.length + ' product' + (list.length === 1 ? '' : 's');
+    document.querySelectorAll('#tabs a').forEach((a) => a.dataset.c === cat ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+    document.title = 'Mango Jack · ' + (cat === 'all' ? 'Shop' : CATS[cat]) + ' (Draft)';
+  };
+  window.addEventListener('hashchange', () => { render(); window.scrollTo({ top: 0 }); });
+  sortSel.addEventListener('change', render);
+  render();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mango Jack · Product (Draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+
+<main id="main">
+  <div class="wrap pdp-page" style="position:relative">
+    <span class="note" style="top:8px">Product page · flatlay first, then on-body and detail shots · sticky buy box</span>
+    <div class="gallery" id="gallery"></div>
+
+    <div class="pinfo">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="shop.html">Shop</a> / <a href="shop.html" id="crumbCat">Category</a></nav>
+      <div>
+        <span class="small" id="pTag">Unisex</span>
+        <h1 class="display" id="pName" style="margin-top:8px">Product</h1>
+      </div>
+      <div class="price">[$PRICE] AUD <span class="small" style="margin-left:8px">or 4 payments with Afterpay</span></div>
+      <p style="margin:0;color:var(--ink-2)" id="pDesc"></p>
+
+      <div>
+        <span class="opt-label">Colour: <span id="colName"></span></span>
+        <div class="chips" id="colours" role="group" aria-label="Colour"></div>
+      </div>
+      <div>
+        <span class="opt-label" style="display:flex;justify-content:space-between">Size <a href="contact.html#faq" style="text-transform:none;letter-spacing:0;font-weight:400;text-decoration:underline">Size guide</a></span>
+        <div class="chips" id="sizes" role="group" aria-label="Size"></div>
+      </div>
+      <button class="btn" type="button" id="addBtn">Add to bag</button>
+      <p class="small" style="margin:0">Free standard delivery within Australia · Easy returns</p>
+
+      <div class="acc">
+        <details open><summary>Details</summary><p id="pDetails"></p></details>
+        <details><summary>Fabric and care</summary><p>[Fabric composition, weight and UPF rating.] Cold wash, line dry in the shade.</p></details>
+        <details><summary>Delivery and returns</summary><p>Complimentary standard delivery within Australia. Returns accepted within [XX] days of delivery. See the refund policy for details.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <section class="wrap related" aria-labelledby="relH">
+    <h2 class="display" id="relH">Complete the <span class="accent">look</span></h2>
+    <div class="pgrid" id="related"></div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+{
+  const { PRODUCTS, CATS, tile, esc } = MJ;
+  const COPY = {
+    tees: ['Unisex fit, cut for long days on the sand and short nights by the fire.', 'Relaxed unisex fit · Soft-hand screen print · [Fabric] cotton'],
+    shorts: ['Just as at home on the saltwater as it is on the sofa. Comfy enough for the daily, smart enough for a barbie at the neighbours.', 'Elastic waist with drawcord · Side pockets · Mango Jack patch on the leg'],
+    headwear: ['Sun on, glare off. Built for early starts and late finishes on the water.', 'Adjustable back · Embroidered Mango Jack patch · One size fits most']
+  };
+  const SIZES = { tees: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], shorts: ['XS', 'S', 'M', 'L', 'XL', 'XXL'], headwear: ['One size'] };
+  const addBtn = document.getElementById('addBtn');
+  let colour, size;
+
+  const render = () => {
+    const p = PRODUCTS.find((x) => x.id === location.hash.slice(1)) || PRODUCTS.find((x) => x.id === 'corduroy-short');
+    colour = p.colours[0];
+    size = SIZES[p.cat].length === 1 ? SIZES[p.cat][0] : 'M';
+    document.title = 'Mango Jack · ' + p.name + ' (Draft)';
+    document.getElementById('pName').textContent = p.name;
+    document.getElementById('pTag').textContent = (p.tag ? p.tag + ' · ' : '') + (p.cat === 'headwear' ? 'Headwear' : 'Unisex');
+    document.getElementById('pDesc').textContent = COPY[p.cat][0];
+    document.getElementById('pDetails').textContent = COPY[p.cat][1];
+    const cc = document.getElementById('crumbCat'); cc.textContent = CATS[p.cat]; cc.href = 'shop.html#' + p.cat;
+
+    const flat = p.img ? `<div class="pimg"><img src="${p.img}" alt="${esc(p.name)} flatlay"></div>` : '<div class="pimg"><span class="pimg-label">Flatlay · front</span></div>';
+    document.getElementById('gallery').innerHTML = flat +
+      '<div class="media alt"><span class="ph-name">On-body · lifestyle</span></div>' +
+      '<div class="media"><span class="ph-name">Detail · patch / print</span></div>';
+
+    const colEl = document.getElementById('colours');
+    colEl.innerHTML = p.colours.map((c, i) => `<button class="chip" type="button" aria-pressed="${i === 0}" data-c="${esc(c)}">${esc(c)}</button>`).join('');
+    document.getElementById('colName').textContent = colour;
+    const sizeEl = document.getElementById('sizes');
+    sizeEl.innerHTML = SIZES[p.cat].map((s) => `<button class="chip${s === 'XXL' ? ' oos' : ''}" type="button" aria-pressed="${s === size}" ${s === 'XXL' ? 'data-oos="1" aria-label="XXL, sold out"' : ''}>${s}</button>`).join('');
+    addBtn.textContent = 'Add to bag';
+    addBtn.dataset.id = p.id;
+
+    const others = ['tees', 'shorts', 'headwear'].filter((c) => c !== p.cat).map((c) => PRODUCTS.find((x) => x.cat === c));
+    const same = PRODUCTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 2);
+    document.getElementById('related').innerHTML = others.concat(same).slice(0, 4).map(tile).join('');
+  };
+
+  document.getElementById('colours').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    document.querySelectorAll('#colours .chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+    b.setAttribute('aria-pressed', 'true'); colour = b.dataset.c; document.getElementById('colName').textContent = colour;
+  });
+  document.getElementById('sizes').addEventListener('click', (e) => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    document.querySelectorAll('#sizes .chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+    b.setAttribute('aria-pressed', 'true'); size = b.textContent;
+    addBtn.textContent = b.dataset.oos ? 'Notify me when back' : 'Add to bag';
+  });
+  addBtn.addEventListener('click', () => {
+    if (addBtn.textContent.startsWith('Notify')) { addBtn.textContent = 'We’ll email you'; return; }
+    if (addBtn.textContent !== 'Add to bag') return;
+    MJ.addToBag(addBtn.dataset.id, colour, size);
+  });
+  window.addEventListener('hashchange', () => { render(); window.scrollTo({ top: 0 }); });
+  render();
+}
+</script>
+</body>
+</html>

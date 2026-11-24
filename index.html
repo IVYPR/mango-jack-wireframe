@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mango Jack · Home (Draft)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-hero="1">
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+  <!-- 1 Full-bleed hero -->
+  <section class="media hero" id="hero" aria-label="Launch collection">
+    <span class="note">1 · One full-bleed image (replaces carousel, arrows and dots) · light text · header sits on top</span>
+    <img class="bg" src="assets/hero.jpg" alt="Father and child rigging a line on the beach, wearing Mango Jack" style="object-position:62% 40%"><span class="shade"></span>
+    <div class="hero-copy">
+      <span class="eyebrow">Summer 26 · The first collection</span>
+      <h1 class="display">Made for a<br>Life Well Fished</h1>
+      <a href="shop.html" class="tlink">Shop now</a>
+    </div>
+  </section>
+
+  <!-- 2 Product feature -->
+  <section class="split" id="feature" aria-label="Featured product">
+    <a href="product.html#corduroy-short" class="media alt" style="position:relative"><span class="note" style="top:16px">2 · Lifestyle image + one featured product (Calibre's banner + product card)</span><span class="ph-name">Corduroy short lifestyle image</span></a>
+    <div class="pdp">
+      <a href="product.html#corduroy-short" class="pimg" style="width:min(300px,100%)"><img src="assets/corduroy-short.jpg" alt="The Corduroy Short in sand"></a>
+      <span class="small">New arrival · Unisex</span>
+      <h2><a href="product.html#corduroy-short">The Corduroy Short</a></h2>
+      <p style="margin:0;color:var(--ink-2)">Just as at home on the saltwater as it is on the sofa. Comfy enough for the daily, smart enough for a barbie at the neighbours.</p>
+      <div class="price">[$PRICE] AUD</div>
+      <div class="sizes" role="group" aria-label="Size">
+        <button class="size" type="button" aria-pressed="false">XS</button>
+        <button class="size" type="button" aria-pressed="false">S</button>
+        <button class="size" type="button" aria-pressed="true">M</button>
+        <button class="size" type="button" aria-pressed="false">L</button>
+        <button class="size" type="button" aria-pressed="false">XL</button>
+        <button class="size oos" type="button" aria-pressed="false" data-oos="1" aria-label="XXL, sold out">XXL</button>
+      </div>
+      <button class="btn" type="button" id="addBtn" style="align-self:flex-start">Add to bag</button>
+    </div>
+  </section>
+
+  <!-- 3 Full-bleed video -->
+  <section class="media video" aria-label="Brand film">
+    <span class="note" style="top:16px">3 · Full-bleed video, edge to edge (replaces boxed video on beige band) · muted autoplay loop · play opens with sound</span>
+    <button class="play" type="button" aria-label="Play film">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
+    </button>
+    <img class="bg" src="assets/film-still.jpg" alt=""><span class="shade"></span>
+    <div class="video-copy">
+      <span class="eyebrow">The film</span>
+      <h2 class="display">Worn in but<br>never worn out</h2>
+    </div>
+  </section>
+
+  <!-- 4 Categories -->
+  <section class="cats" id="cats" aria-label="Shop by category" style="position:relative">
+    <span class="note" style="top:16px">4 · Three tall category images · light text, underlined link (replaces four tiles with boxed buttons)</span>
+    <a href="shop.html#tees" class="media cat"><span class="ph-name">Tees image</span><div class="cat-copy"><h2 class="display">Tees</h2><span class="tlink">Shop tees</span></div></a>
+    <a href="shop.html#shorts" class="media cat alt"><span class="ph-name">Shorts image</span><div class="cat-copy"><h2 class="display">Shorts</h2><span class="tlink">Shop shorts</span></div></a>
+    <a href="shop.html#headwear" class="media cat"><span class="ph-name">Headwear image</span><div class="cat-copy"><h2 class="display">Headwear</h2><span class="tlink">Shop headwear</span></div></a>
+  </section>
+
+  <!-- 4b Seasonal gifting banner -->
+  <section class="media video alt" aria-label="Christmas gifting" style="height:86vh;justify-content:center;align-items:center;text-align:center">
+    <span class="note" style="top:16px">5 · Seasonal full-bleed banner (Calibre's store-banner slot) · replaces the four-image grid · swap out after Christmas</span>
+    <span class="ph-name" style="top:24%">Gifting image</span>
+    <div class="video-copy" style="align-items:center;padding:40px 20px">
+      <h2 class="display">Make it a<br>Christmas well fished</h2>
+      <p style="margin:0;max-width:460px;opacity:.9">Give them the gift of saltwater, sand between their toes and golden afternoons they'll remember forever.</p>
+      <a href="shop.html" class="tlink" style="align-self:center">Shop gifts</a>
+    </div>
+  </section>
+
+  <!-- 5 Brand + newsletter -->
+  <section class="media video" aria-labelledby="brandH" style="height:92vh">
+    <span class="note" style="top:16px">6 · Brand story over a full-bleed image (the kids-on-the-beach shot, no longer inset)</span>
+    <img class="bg" src="assets/kids-beach.jpg" alt="Four kids on the beach in Mango Jack tees" style="object-position:50% 40%"><span class="shade"></span>
+    <div class="video-copy" style="max-width:720px">
+      <h2 id="brandH" class="display">A Life<br>Well Fished</h2>
+      <p style="margin:0;font-size:17px;opacity:.92">Our families have been fishing up and down the coastlines and rivers of Australia for years, wearing Mango Jack. Fishing apparel built to live in, fish in and eventually pass down to the next generation.</p>
+    </div>
+  </section>
+
+  <section class="brand" aria-label="Newsletter" style="position:relative;padding:72px 0">
+    <span class="note" style="top:16px">7 · Newsletter strip</span>
+    <div class="wrap">
+      <h2 class="display" style="font-size:clamp(28px,3vw,40px)">Join the <span class="accent">crew</span></h2>
+      <p style="margin:12px auto 28px">New drops, fishing trips and first dibs on limited runs.</p>
+      <form class="nl" id="nlForm" novalidate>
+        <label for="nlEmail" class="sr">Email address</label>
+        <input type="email" id="nlEmail" placeholder="Email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="nl-msg" id="nlMsg" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/site.js"></script>
+<script>
+{
+  const addBtn=document.getElementById('addBtn');let size='M';
+  document.querySelectorAll('.size').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.size').forEach(x=>x.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');size=b.textContent;
+    addBtn.textContent=b.dataset.oos?'Notify me':'Add to bag';
+  }));
+  addBtn.addEventListener('click',()=>{
+    if(addBtn.textContent==='Notify me'){addBtn.textContent='We\u2019ll email you';return}
+    if(addBtn.textContent!=='Add to bag')return;
+    MJ.addToBag('corduroy-short','Sand',size);
+  });
+}
+</script>
+</body>
+</html>
