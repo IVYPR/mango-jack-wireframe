@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Mango Jack · Contact (Draft)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -17,8 +15,9 @@
   <div class="wrap contact" style="position:relative">
     <span class="note" style="top:8px">Contact · form left, details and FAQs right (Shopify contact form in build)</span>
     <section aria-labelledby="cH">
-      <h1 class="display" id="cH">Get in <span class="accent">touch</span></h1>
-      <p style="color:var(--ink-2);margin:0 0 32px">Questions about sizing, an order or where we're fishing next. We'll get back to you within one business day.</p>
+      <span class="label">Contact</span>
+      <h1 class="h2" id="cH" style="margin-bottom:20px">Get in touch.</h1>
+      <p class="copy" style="margin-bottom:36px">Questions about sizing, an order or where we're fishing next. We'll get back to you within one business day.</p>
       <form id="cForm" novalidate>
         <div class="field"><label for="cName">Name</label><input id="cName" autocomplete="name" required></div>
         <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" autocomplete="email" required></div>
@@ -26,17 +25,17 @@
           <select id="cTopic"><option>Order or delivery</option><option>Sizing</option><option>Returns</option><option>Wholesale</option><option>Something else</option></select></div>
         <div class="field"><label for="cOrder">Order number (optional)</label><input id="cOrder"></div>
         <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" required></textarea></div>
-        <button class="btn" type="submit">Send message</button>
-        <p id="cOut" aria-live="polite" style="min-height:24px;margin:16px 0 0"></p>
+        <button class="btn" type="submit">Send message <span aria-hidden="true">→</span></button>
+        <p id="cOut" aria-live="polite" style="min-height:24px;margin-top:16px"></p>
       </form>
     </section>
 
     <aside class="cinfo" aria-label="Contact details">
-      <div><h3>Phone</h3><p>1300 734 708</p></div>
-      <div><h3>Instagram</h3><p><a href="#" style="text-decoration:underline">@MangoJack_AU</a></p></div>
+      <div><span class="label">Phone</span><p>1300 734 708</p></div>
+      <div><span class="label">Instagram</span><p><a href="#" class="textlink">@MangoJack_AU <span aria-hidden="true">↗</span></a></p></div>
       <div id="faq" class="acc">
-        <h3 style="margin-bottom:0">FAQs</h3>
-        <details><summary>How do your tees fit?</summary><p>Our tees are a relaxed unisex fit. If you're between sizes, take your usual size for a classic fit or size down for a closer one. [Size chart to come.]</p></details>
+        <span class="label">FAQs</span>
+        <details><summary>How do your tees fit?</summary><p>A relaxed unisex fit. Between sizes? Take your usual size for a classic fit or size down for a closer one. [Size chart to come.]</p></details>
         <details><summary>How long does delivery take?</summary><p>Standard delivery within Australia is complimentary and usually takes [X to X] business days.</p></details>
         <details><summary>Can I return something?</summary><p>Yes. Unworn items with tags can be returned within [XX] days. See the refund policy for details.</p></details>
         <details><summary>Do you ship overseas?</summary><p>[Yes / Not yet. Confirm before launch.]</p></details>
@@ -52,7 +51,7 @@
   document.getElementById('cForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const ok = document.getElementById('cName').value.trim() && /.+@.+\..+/.test(document.getElementById('cEmail').value) && document.getElementById('cMsg').value.trim();
-    document.getElementById('cOut').textContent = ok ? 'Draft only: in the live site this sends through Shopify’s contact form.' : 'Please add your name, a valid email and a message.';
+    document.getElementById('cOut').textContent = ok ? 'Draft only: on the live site this sends through Shopify’s contact form.' : 'Please add your name, a valid email and a message.';
   });
 }
 </script>
