@@ -48,19 +48,27 @@
   </section>
 
 
+  <section class="wrap" aria-labelledby="looks-title" style="position:relative;padding-top:clamp(50px,7vw,105px);padding-bottom:clamp(50px,7vw,105px)">
+    <span class="note" style="top:16px">4 · Shop the look · on-body shots linking to each product worn</span>
+    <div class="row-hd">
+      <div><span class="label">On the water</span><h2 class="h2" id="looks-title">Shop the look</h2></div>
+      <a class="textlink" href="shop.html">Shop all <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="looks" id="homeLooks"></div>
+  </section>
+
   <section class="media shade film" aria-labelledby="film-title">
-    <span class="note" style="top:16px">4 · Full-bleed campaign film · add the MP4 when ready</span>
-    <img class="bg poster" src="assets/film-still.jpg" alt="" loading="lazy">
-    <video id="film-player" aria-label="Mango Jack campaign film" data-film-url="" playsinline preload="none"></video>
+    <span class="note" style="top:16px">5 · Campaign film, full-bleed · colour-corrected · plays muted on loop, sound on request</span>
+    <video class="bg" id="film-player" src="assets/film/mango-jack-film.mp4" poster="assets/film/film-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Mango Jack campaign film"></video>
+    <button class="lightlink sound" type="button" id="soundBtn" aria-pressed="false">Sound on <span aria-hidden="true">♪</span></button>
     <div class="caption">
       <div><span class="label">The campaign film</span><h2 id="film-title">Worn in but<br>never worn out.</h2></div>
-      <label class="lightlink file-choice">Preview a video <span aria-hidden="true">＋</span><input id="film-file" type="file" accept="video/*"></label>
+      <button class="lightlink" type="button" id="pauseBtn">Pause <span aria-hidden="true">❚❚</span></button>
     </div>
-    <p class="film-msg" id="film-error" role="status" hidden></p>
   </section>
 
   <section class="feature" aria-labelledby="short-title" style="position:relative">
-    <span class="note" style="top:16px">5 · Featured product · colour swaps the photo · buy straight from the home page</span>
+    <span class="note" style="top:16px">6 · Featured product · colour swaps the photo · buy straight from the home page</span>
     <a class="pimg" href="product.html#broadwater-cord-short" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-beige-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in beige."></a>
     <div class="buy" id="featureBuy">
       <div>
@@ -132,27 +140,24 @@
   });
   featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => 'broadwater-cord-short', () => featColour);
 
-  // Film: play an MP4 once its address is set in data-film-url, or preview a local file
+  // Shop the look
+  document.getElementById('homeLooks').innerHTML = MJ.LOOKS.slice(0, 4).map(MJ.lookTile).join('');
+
+  // Film: muted loop by default, sound and pause on request
   const player = document.getElementById('film-player');
-  const film = player.closest('.film');
-  const chooser = document.getElementById('film-file');
-  const message = document.getElementById('film-error');
-  let localClip = '';
-  const useFilm = (url, playNow) => {
-    message.hidden = true; player.controls = true; player.src = url; film.classList.add('ready');
-    if (playNow) player.play().catch(() => {});
-  };
-  player.addEventListener('error', () => {
-    if (!player.getAttribute('src')) return;
-    film.classList.remove('ready'); player.controls = false;
-    message.textContent = 'This video could not play. Try an MP4.'; message.hidden = false;
+  const soundBtn = document.getElementById('soundBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { player.removeAttribute('autoplay'); player.pause(); pauseBtn.firstChild.textContent = 'Play '; }
+  soundBtn.addEventListener('click', () => {
+    player.muted = !player.muted;
+    if (!player.muted) { player.currentTime = 0; player.play().catch(() => {}); pauseBtn.firstChild.textContent = 'Pause '; }
+    soundBtn.firstChild.textContent = player.muted ? 'Sound on ' : 'Sound off ';
+    soundBtn.setAttribute('aria-pressed', !player.muted);
   });
-  chooser.addEventListener('change', () => {
-    const file = chooser.files[0]; if (!file) return;
-    if (localClip) URL.revokeObjectURL(localClip);
-    localClip = URL.createObjectURL(file); useFilm(localClip, true); chooser.value = '';
+  pauseBtn.addEventListener('click', () => {
+    if (player.paused) { player.play().catch(() => {}); pauseBtn.firstChild.textContent = 'Pause '; }
+    else { player.pause(); pauseBtn.firstChild.textContent = 'Play '; }
   });
-  if (player.dataset.filmUrl) useFilm(player.dataset.filmUrl, false);
 }
 </script>
 </body>

@@ -596,6 +596,32 @@
       "price": 49.99
     }
   ];
+  // On-body model shots (AI-generated), each tagged with the products and colours it shows
+  const LOOKS = [
+    { img: 'assets/looks/offshore-beige-cord.jpg', items: [['offshore-fishing-club-tee', 'Navy'], ['broadwater-cord-short', 'Beige']] },
+    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['ladies-broadwater-cord-short', 'Beige']] },
+    { img: 'assets/looks/kids-crab.jpg', items: [['kids-crab-tee', 'Azure Blue']] },
+    { img: 'assets/looks/ripstop-white.jpg', items: [['ripstop-cap', 'White']] },
+    { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['bar-and-grill-tee', 'Blue'], ['broadwater-cord-short', 'Navy']] },
+    { img: 'assets/looks/large-outline-tee.jpg', items: [['large-outline-regfit-tee', 'White']] },
+    { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short', 'Navy']] },
+    { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short', 'Navy']] },
+    { img: 'assets/looks/kids-ruby-1.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
+    { img: 'assets/looks/kids-ruby-2.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
+    { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short', 'Salmon']] },
+    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short', 'Salmon']] }
+  ];
+  // Looks for a product, matching colour first
+  const looksFor = (id, colour) => {
+    const has = LOOKS.filter((l) => l.items.some(([pid]) => pid === id));
+    return has.filter((l) => l.items.some(([pid, c]) => pid === id && c === colour)).concat(has.filter((l) => !l.items.some(([pid, c]) => pid === id && c === colour)));
+  };
+  const wearing = (l) => l.items.map(([pid, c]) => { const p = PRODUCTS.find((x) => x.id === pid); return p ? `<a href="product.html#${pid}">${esc(p.name)}</a>` : ''; }).filter(Boolean).join(' · ');
+  const lookTile = (l) => `
+    <figure class="look">
+      <a class="pimg" href="product.html#${l.items[0][0]}"><img src="${l.img}" alt="Model wearing ${esc(l.items.map(([pid]) => (PRODUCTS.find((x) => x.id === pid) || {}).name).join(' and '))}" loading="lazy"></a>
+      <figcaption><span class="small">Wearing</span> ${wearing(l)}</figcaption>
+    </figure>`;
   const CATS = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const CAT_LONG = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -614,7 +640,7 @@
   const count = (c) => PRODUCTS.filter((p) => p.cat === c).length;
   const indexList = (closeAttr) => ['tees', 'shorts', 'headwear'].map((c) =>
     `<a href="shop.html#${c}"${closeAttr}>${CAT_LONG[c]}<small>${count(c)}</small><span aria-hidden="true">↗</span></a>`).join('');
-  window.MJ = { PRODUCTS, CATS, CAT_LONG, esc, tile, indexList, money, priceText };
+  window.MJ = { PRODUCTS, CATS, CAT_LONG, esc, tile, indexList, money, priceText, LOOKS, looksFor, lookTile };
 
   const header = `
   <header class="site" id="hdr">

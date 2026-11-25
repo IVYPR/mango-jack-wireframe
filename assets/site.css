@@ -229,3 +229,15 @@ body.pad-top main{padding-top:75px}
 .qtabs{display:flex;gap:22px;flex-wrap:wrap}
 .qtabs button{font-size:12px;font-weight:500;letter-spacing:.065em;text-transform:uppercase;color:var(--ink-2);min-height:44px;border-bottom:1px solid transparent}
 .qtabs button[aria-pressed="true"],.qtabs button:hover{color:var(--ink);border-color:var(--ink)}
+
+/* Model shots */
+.look{margin:0;display:flex;flex-direction:column;gap:10px}
+.look .pimg img{object-fit:cover}
+.look figcaption{font-size:14px;line-height:1.45}
+.look figcaption .small{margin-right:6px}
+.look figcaption a{text-decoration:underline;text-underline-offset:3px}
+.look figcaption a:hover{text-decoration-thickness:2px}
+.looks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pgrid .look .pimg{background:var(--paper-2)}
+.sound{position:absolute;right:clamp(20px,3.5vw,62px);top:clamp(20px,3vw,40px);z-index:2}
+@media (max-width:760px){.looks{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 10px}}

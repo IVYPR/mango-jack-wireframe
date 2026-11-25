@@ -13,7 +13,7 @@
 
 <main id="main">
   <div class="wrap pdp-page" style="position:relative">
-    <span class="note" style="top:8px">Product page · front flatlay, back, then on-body · colour swaps the photos · buy box stays in view</span>
+    <span class="note" style="top:8px">Product page · front flatlay, back, then on-body model shots · colour swaps the photos · buy box stays in view</span>
     <div class="gallery" id="gallery"></div>
 
     <div class="pinfo" id="buy">
@@ -80,7 +80,8 @@
     document.getElementById('gallery').innerHTML =
       `<div class="pimg"><img src="${c.front}" alt="${esc(current.name)} in ${esc(c.name)}, front"></div>` +
       `<div class="pimg"><img src="${c.back}" alt="${esc(current.name)} in ${esc(c.name)}, back"></div>` +
-      '<div class="media" style="aspect-ratio:1/1"><span class="ph-name">On-body</span></div>';
+      (MJ.looksFor(current.id, c.name).slice(0, 4).map((l) => `<div class="pimg"><img src="${l.img}" alt="Model wearing ${esc(current.name)}" style="object-fit:cover" loading="lazy"></div>`).join('') ||
+      '<div class="media" style="aspect-ratio:1/1"><span class="ph-name">On-body</span></div>');
   };
   const render = () => {
     const p = PRODUCTS.find((x) => x.id === location.hash.slice(1)) || PRODUCTS.find((x) => x.id === 'broadwater-cord-short');

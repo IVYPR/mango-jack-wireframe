@@ -60,7 +60,10 @@
     let list = cat === 'all' ? PRODUCTS.slice() : PRODUCTS.filter((p) => p.cat === cat);
     if (sortSel.value === 'az') list.sort((a, b) => a.name.localeCompare(b.name));
     if (sortSel.value === 'za') list.sort((a, b) => b.name.localeCompare(a.name));
-    grid.innerHTML = list.map(tile).join('');
+    // Pepper a relevant on-body look in after every sixth product
+    const looks = MJ.LOOKS.filter((l) => l.items.some(([pid]) => list.some((x) => x.id === pid)));
+    let li = 0;
+    grid.innerHTML = list.map((p, i) => tile(p) + ((i + 1) % 6 === 0 && li < looks.length ? MJ.lookTile(looks[li++]) : '')).join('');
     document.getElementById('shopTitle').textContent = cat === 'all' ? 'Shop all' : CAT_LONG[cat];
     document.getElementById('bandLabel').textContent = BAND[cat][0];
     const img = document.getElementById('bandImg'); img.src = BAND[cat][1]; img.style.objectPosition = BAND[cat][2];
