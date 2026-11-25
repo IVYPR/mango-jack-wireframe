@@ -42,7 +42,21 @@
           "front": "assets/products/marlin-compass-oversize-tee-white-front.jpg",
           "back": "assets/products/marlin-compass-oversize-tee-white-back.jpg"
         }
-      ]
+      ],
+      "price": 69.99,
+      "stock": {
+        "White": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        }
+      }
     },
     {
       "id": "bar-and-grill-tee",
@@ -71,7 +85,32 @@
           "front": "assets/products/outline-logo-regfit-tee-navy-front.jpg",
           "back": "assets/products/outline-logo-regfit-tee-navy-back.jpg"
         }
-      ]
+      ],
+      "price": 54.99,
+      "stock": {
+        "White": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        },
+        "Navy": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        }
+      }
     },
     {
       "id": "large-outline-regfit-tee",
@@ -91,15 +130,29 @@
       "cat": "tees",
       "colours": [
         {
-          "name": "Beige",
+          "name": "White",
           "front": "assets/products/murray-cod-fresh-tee-beige-front.jpg",
           "back": "assets/products/murray-cod-fresh-tee-beige-back.jpg"
         }
-      ]
+      ],
+      "price": 54.99,
+      "stock": {
+        "White": {
+          "XS": false,
+          "S": false,
+          "M": false,
+          "L": false,
+          "XL": false,
+          "2XL": false,
+          "3XL": false,
+          "4XL": false,
+          "5XL": false
+        }
+      }
     },
     {
       "id": "sand-whiting-tee",
-      "name": "Sand Whiting Tee",
+      "name": "Sand Whiting Ghost Tee",
       "cat": "tees",
       "colours": [
         {
@@ -107,7 +160,21 @@
           "front": "assets/products/sand-whiting-tee-beige-front.jpg",
           "back": "assets/products/sand-whiting-tee-beige-back.jpg"
         }
-      ]
+      ],
+      "price": 54.99,
+      "stock": {
+        "Beige": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        }
+      }
     },
     {
       "id": "noosa-north-reef-tee",
@@ -142,7 +209,43 @@
           "back": "assets/products/broadwater-cord-short-salmon-back.jpg"
         }
       ],
-      "tag": "New"
+      "tag": "New",
+      "price": 79.99,
+      "stock": {
+        "Beige": {
+          "XS": false,
+          "S": true,
+          "M": false,
+          "L": false,
+          "XL": false,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        },
+        "Navy": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        },
+        "Salmon": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        }
+      }
     },
     {
       "id": "seaway-swim-short-pelagic",
@@ -200,7 +303,19 @@
           "front": "assets/products/dad-cap-sky-blue-front.jpg",
           "back": "assets/products/dad-cap-sky-blue-back.jpg"
         }
-      ]
+      ],
+      "price": 49.99,
+      "stock": {
+        "Beige": {
+          "One size": true
+        },
+        "Navy": {
+          "One size": false
+        },
+        "Sky Blue": {
+          "One size": true
+        }
+      }
     },
     {
       "id": "ripstop-cap",
@@ -235,19 +350,22 @@
   const CATS = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const CAT_LONG = { tees: 'Unisex T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const money = (n) => '$' + n.toFixed(2);
+  const priceText = (p) => p.price ? money(p.price) : '[$PRICE]';
+  const soldOut = (p) => !!p.stock && Object.values(p.stock).every((c) => Object.values(c).every((v) => !v));
   const tile = (p) => {
     const c = p.colours[0];
     return `
     <a class="ptile" href="product.html#${p.id}">
       <div class="pimg"><img src="${c.front}" alt="${esc(p.name)} in ${esc(c.name)}" loading="lazy"><img class="alt" src="${c.back}" alt="" loading="lazy">${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
-      <div class="pmeta"><span class="pname">${esc(p.name)}</span><span class="pprice">[$PRICE]</span></div>
+      <div class="pmeta"><span class="pname">${esc(p.name)}</span><span class="pprice">${soldOut(p) ? 'Sold out' : priceText(p)}</span></div>
       <div class="pcols">${p.colours.length > 1 ? p.colours.length + ' colours · ' : ''}${esc(p.colours.map((x) => x.name).join(' · '))}</div>
     </a>`;
   };
   const count = (c) => PRODUCTS.filter((p) => p.cat === c).length;
   const indexList = (closeAttr) => ['tees', 'shorts', 'headwear'].map((c) =>
     `<a href="shop.html#${c}"${closeAttr}>${CAT_LONG[c]}<small>${count(c)}</small><span aria-hidden="true">↗</span></a>`).join('');
-  window.MJ = { PRODUCTS, CATS, CAT_LONG, esc, tile, indexList };
+  window.MJ = { PRODUCTS, CATS, CAT_LONG, esc, tile, indexList, money, priceText };
 
   const header = `
   <header class="site" id="hdr">
@@ -357,11 +475,13 @@
     const n = bag.reduce((a, i) => a + i.qty, 0);
     document.getElementById('bagCount').textContent = n;
     document.getElementById('bagCount2').textContent = n;
-    document.getElementById('subtotal').textContent = n ? '[$PRICE] × ' + n : '$0.00 AUD';
+    const priced = bag.every((i) => (PRODUCTS.find((p) => p.id === i.id) || {}).price);
+    const sum = bag.reduce((a, i) => a + ((PRODUCTS.find((p) => p.id === i.id) || {}).price || 0) * i.qty, 0);
+    document.getElementById('subtotal').textContent = !n ? '$0.00 AUD' : (priced ? money(sum) + ' AUD' : money(sum) + ' + [$PRICE] items');
     document.getElementById('bagItems').innerHTML = bag.length ? bag.map((i, ix) => {
       const p = PRODUCTS.find((x) => x.id === i.id);
       const c = p.colours.find((x) => x.name === i.colour) || p.colours[0];
-      return `<div class="line-item"><a href="product.html#${p.id}" class="pimg"><img src="${c.front}" alt=""></a><div><div>${esc(p.name)}</div><div class="small" style="margin-top:4px">${esc(i.colour)} · ${esc(i.size)}</div><div class="qty"><button type="button" data-q="${ix}" data-d="-1" aria-label="Remove one">−</button><span>${i.qty}</span><button type="button" data-q="${ix}" data-d="1" aria-label="Add one">+</button></div></div></div>`;
+      return `<div class="line-item"><a href="product.html#${p.id}" class="pimg"><img src="${c.front}" alt=""></a><div><div>${esc(p.name)}</div><div class="small" style="margin-top:4px">${esc(i.colour)} · ${esc(i.size)}</div><div style="margin-top:4px">${priceText(p)}</div><div class="qty"><button type="button" data-q="${ix}" data-d="-1" aria-label="Remove one">−</button><span>${i.qty}</span><button type="button" data-q="${ix}" data-d="1" aria-label="Add one">+</button></div></div></div>`;
     }).join('') : '<p style="color:var(--ink-2)">Your bag is empty.</p>';
     const inBag = new Set(bag.map((i) => PRODUCTS.find((p) => p.id === i.id).cat));
     const inIds = new Set(bag.map((i) => i.id));
