@@ -13,7 +13,7 @@
 
 <main id="main">
   <div class="wrap pdp-page" style="position:relative">
-    <span class="note" style="top:8px">Product page · flatlay first, then on-body and detail · buy box stays in view</span>
+    <span class="note" style="top:8px">Product page · front flatlay, back, then on-body · colour swaps the photos · buy box stays in view</span>
     <div class="gallery" id="gallery"></div>
 
     <div class="pinfo" id="buy">
@@ -65,9 +65,16 @@
   let current, colour;
   const picker = MJ.sizePicker(document.getElementById('buy'), () => current.id, () => colour);
 
+  const drawGallery = () => {
+    const c = current.colours.find((x) => x.name === colour) || current.colours[0];
+    document.getElementById('gallery').innerHTML =
+      `<div class="pimg"><img src="${c.front}" alt="${esc(current.name)} in ${esc(c.name)}, front"></div>` +
+      `<div class="pimg"><img src="${c.back}" alt="${esc(current.name)} in ${esc(c.name)}, back"></div>` +
+      '<div class="media" style="aspect-ratio:1/1"><span class="ph-name">On-body</span></div>';
+  };
   const render = () => {
-    const p = PRODUCTS.find((x) => x.id === location.hash.slice(1)) || PRODUCTS.find((x) => x.id === 'corduroy-short');
-    current = p; colour = p.colours[0];
+    const p = PRODUCTS.find((x) => x.id === location.hash.slice(1)) || PRODUCTS.find((x) => x.id === 'broadwater-cord-short');
+    current = p; colour = p.colours[0].name;
     const def = SIZES[p.cat].length === 1 ? SIZES[p.cat][0] : 'M';
     document.title = 'Mango Jack · ' + p.name + ' (Draft)';
     document.getElementById('pName').textContent = p.name;
@@ -76,12 +83,9 @@
     document.getElementById('pDetails').textContent = COPY[p.cat][1];
     const cc = document.getElementById('crumbCat'); cc.textContent = CAT_LONG[p.cat]; cc.href = 'shop.html#' + p.cat;
 
-    const flat = p.img ? `<div class="pimg"><img src="${p.img}" alt="${esc(p.name)} flatlay"></div>` : '<div class="pimg"><span class="pimg-label">Flatlay · front</span></div>';
-    document.getElementById('gallery').innerHTML = flat +
-      '<div class="media"><span class="ph-name">On-body</span></div>' +
-      '<div class="media" style="background:#2b3f39"><span class="ph-name">Detail</span></div>';
+    drawGallery();
 
-    document.getElementById('colours').innerHTML = p.colours.map((c, i) => `<button class="chip" type="button" data-colour aria-pressed="${i === 0}">${esc(c)}</button>`).join('');
+    document.getElementById('colours').innerHTML = p.colours.map((c, i) => `<button class="chip" type="button" data-colour aria-pressed="${i === 0}">${esc(c.name)}</button>`).join('');
     document.getElementById('colName').textContent = colour;
     document.getElementById('sizes').innerHTML = SIZES[p.cat].map((s) => `<button class="chip${s === 'XXL' ? ' oos' : ''}" type="button" data-size aria-pressed="${s === def}"${s === 'XXL' ? ' data-oos="1" aria-label="XXL, sold out"' : ''}>${s}</button>`).join('');
     picker.reset();
@@ -95,6 +99,7 @@
     const b = e.target.closest('[data-colour]'); if (!b) return;
     document.querySelectorAll('#colours .chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
     b.setAttribute('aria-pressed', 'true'); colour = b.textContent; document.getElementById('colName').textContent = colour;
+    drawGallery();
   });
   window.addEventListener('hashchange', () => { render(); window.scrollTo({ top: 0 }); });
   render();

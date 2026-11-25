@@ -60,15 +60,19 @@
   </section>
 
   <section class="feature" aria-labelledby="short-title" style="position:relative">
-    <span class="note" style="top:16px">5 · Featured product · buy straight from the home page</span>
-    <a class="pimg" href="product.html#corduroy-short" aria-label="See the Corduroy Short"><img src="assets/corduroy-short.jpg" loading="lazy" alt="Mango Jack Corduroy Short in sand."></a>
+    <span class="note" style="top:16px">5 · Featured product · colour swaps the photo · buy straight from the home page</span>
+    <a class="pimg" href="product.html#broadwater-cord-short" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-beige-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in beige."></a>
     <div class="buy" id="featureBuy">
       <div>
-        <span class="label">Unisex · Sand</span>
-        <h2 class="h2" id="short-title">The Corduroy Short</h2>
+        <span class="label">New · Unisex</span>
+        <h2 class="h2" id="short-title">The Broadwater Cord Short</h2>
         <p class="copy">Just as at home on the saltwater as it is on the sofa. Comfy enough for the daily, smart enough for a barbie at the neighbours.</p>
       </div>
       <div>[$PRICE] AUD</div>
+      <div>
+        <span class="opt-label">Colour · <span id="featCol" style="margin-right:auto;margin-left:6px">Beige</span></span>
+        <div class="chips" id="featCols" role="group" aria-label="Colour"></div>
+      </div>
       <div>
         <span class="opt-label">Size <a href="contact.html#faq">Size guide</a></span>
         <div class="chips" role="group" aria-label="Size">
@@ -81,7 +85,7 @@
         </div>
       </div>
       <button class="btn" type="button" data-add>Add to bag <span aria-hidden="true">→</span></button>
-      <a class="textlink" href="product.html#corduroy-short">Full details <span aria-hidden="true">↗</span></a>
+      <a class="textlink" href="product.html#broadwater-cord-short">Full details <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </main>
@@ -92,7 +96,7 @@
 {
   const { PRODUCTS, tile, indexList } = MJ;
   document.getElementById('homeIndex').innerHTML = indexList('');
-  const pick = ['crab-tee', 'corduroy-short', 'patch-trucker', 'long-sleeve-sun-tee'];
+  const pick = ['offshore-fishing-club-tee', 'broadwater-cord-short', 'dad-cap', 'outline-logo-oversized-tee'];
   const showNew = (c) => {
     const list = c === 'all' ? pick.map((id) => PRODUCTS.find((p) => p.id === id)) : PRODUCTS.filter((p) => p.cat === c).slice(0, 4);
     document.getElementById('newIn').innerHTML = list.map(tile).join('');
@@ -101,7 +105,19 @@
   };
   document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
   showNew('all');
-  MJ.sizePicker(document.getElementById('featureBuy'), () => 'corduroy-short', () => 'Sand');
+  const cord = PRODUCTS.find((p) => p.id === 'broadwater-cord-short');
+  let featColour = cord.colours[0].name;
+  const colWrap = document.getElementById('featCols');
+  colWrap.innerHTML = cord.colours.map((c, i) => `<button class="chip" type="button" data-colour aria-pressed="${i === 0}">${c.name}</button>`).join('');
+  colWrap.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-colour]'); if (!b) return;
+    colWrap.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+    b.setAttribute('aria-pressed', 'true'); featColour = b.textContent;
+    const c = cord.colours.find((x) => x.name === featColour);
+    const img = document.getElementById('featImg'); img.src = c.front; img.alt = 'Mango Jack Broadwater Cord Short in ' + c.name.toLowerCase() + '.';
+    document.getElementById('featCol').textContent = featColour;
+  });
+  MJ.sizePicker(document.getElementById('featureBuy'), () => 'broadwater-cord-short', () => featColour);
 
   // Film: play an MP4 once its address is set in data-film-url, or preview a local file
   const player = document.getElementById('film-player');

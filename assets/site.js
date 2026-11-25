@@ -1,26 +1,249 @@
 /* Mango Jack draft · shared header, footer, bag and product data */
 {
+  // Real launch range from "New Product shots" (front + back flatlay per colour)
   const PRODUCTS = [
-    { id: 'crab-tee', name: 'Crab Tee', cat: 'tees', colours: ['Ocean', 'Navy', 'White'] },
-    { id: 'fish-outline-tee', name: 'Fish Outline Tee', cat: 'tees', colours: ['Purple', 'Navy'] },
-    { id: 'logo-tee', name: 'Logo Tee', cat: 'tees', colours: ['White', 'Navy', 'Sand'] },
-    { id: 'long-sleeve-sun-tee', name: 'Long Sleeve Sun Tee', cat: 'tees', colours: ['White', 'Navy'], tag: 'UPF 50+' },
-    { id: 'corduroy-short', name: 'The Corduroy Short', cat: 'shorts', colours: ['Sand'], img: 'assets/corduroy-short.jpg', tag: 'New' },
-    { id: 'corduroy-short-navy', name: 'The Corduroy Short', cat: 'shorts', colours: ['Navy'] },
-    { id: 'walk-short', name: 'Walk Short', cat: 'shorts', colours: ['Stone', 'Navy'] },
-    { id: 'patch-trucker', name: 'Patch Trucker Cap', cat: 'headwear', colours: ['Blue / Red'] },
-    { id: 'logo-cap', name: 'Logo Cap', cat: 'headwear', colours: ['Cream', 'Navy'] },
-    { id: 'bucket-hat', name: 'Bucket Hat', cat: 'headwear', colours: ['Navy', 'Sand'] }
+    {
+      "id": "offshore-fishing-club-tee",
+      "name": "Offshore Fishing Club Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/offshore-fishing-club-tee-navy-front.jpg",
+          "back": "assets/products/offshore-fishing-club-tee-navy-back.jpg"
+        }
+      ],
+      "tag": "New"
+    },
+    {
+      "id": "outline-logo-oversized-tee",
+      "name": "Outline Logo Oversized Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/outline-logo-oversized-tee-white-front.jpg",
+          "back": "assets/products/outline-logo-oversized-tee-white-back.jpg"
+        },
+        {
+          "name": "Navy",
+          "front": "assets/products/outline-logo-oversized-tee-navy-front.jpg",
+          "back": "assets/products/outline-logo-oversized-tee-navy-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "marlin-compass-oversize-tee",
+      "name": "Marlin Compass Oversize Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/marlin-compass-oversize-tee-white-front.jpg",
+          "back": "assets/products/marlin-compass-oversize-tee-white-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bar-and-grill-tee",
+      "name": "Bar and Grill Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "Blue",
+          "front": "assets/products/bar-and-grill-tee-blue-front.jpg",
+          "back": "assets/products/bar-and-grill-tee-blue-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "outline-logo-regfit-tee",
+      "name": "Outline Logo Regular Fit Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/outline-logo-regfit-tee-white-front.jpg",
+          "back": "assets/products/outline-logo-regfit-tee-white-back.jpg"
+        },
+        {
+          "name": "Navy",
+          "front": "assets/products/outline-logo-regfit-tee-navy-front.jpg",
+          "back": "assets/products/outline-logo-regfit-tee-navy-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "large-outline-regfit-tee",
+      "name": "Large Outline Regular Fit Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/large-outline-regfit-tee-white-front.jpg",
+          "back": "assets/products/large-outline-regfit-tee-white-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "murray-cod-fresh-tee",
+      "name": "Murray Cod Fresh Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "Beige",
+          "front": "assets/products/murray-cod-fresh-tee-beige-front.jpg",
+          "back": "assets/products/murray-cod-fresh-tee-beige-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "sand-whiting-tee",
+      "name": "Sand Whiting Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "Beige",
+          "front": "assets/products/sand-whiting-tee-beige-front.jpg",
+          "back": "assets/products/sand-whiting-tee-beige-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "noosa-north-reef-tee",
+      "name": "Noosa North Reef Tee",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/noosa-north-reef-tee-white-front.jpg",
+          "back": "assets/products/noosa-north-reef-tee-white-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "broadwater-cord-short",
+      "name": "Broadwater Cord Short",
+      "cat": "shorts",
+      "colours": [
+        {
+          "name": "Beige",
+          "front": "assets/products/broadwater-cord-short-beige-front.jpg",
+          "back": "assets/products/broadwater-cord-short-beige-back.jpg"
+        },
+        {
+          "name": "Navy",
+          "front": "assets/products/broadwater-cord-short-navy-front.jpg",
+          "back": "assets/products/broadwater-cord-short-navy-back.jpg"
+        },
+        {
+          "name": "Salmon",
+          "front": "assets/products/broadwater-cord-short-salmon-front.jpg",
+          "back": "assets/products/broadwater-cord-short-salmon-back.jpg"
+        }
+      ],
+      "tag": "New"
+    },
+    {
+      "id": "seaway-swim-short-pelagic",
+      "name": "Seaway Swim Short \u00b7 Pelagic Print",
+      "cat": "shorts",
+      "colours": [
+        {
+          "name": "Azure Blue",
+          "front": "assets/products/seaway-swim-short-pelagic-azure-blue-front.jpg",
+          "back": "assets/products/seaway-swim-short-pelagic-azure-blue-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "seaway-swim-short",
+      "name": "Seaway Swim Short",
+      "cat": "shorts",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/seaway-swim-short-navy-front.jpg",
+          "back": "assets/products/seaway-swim-short-navy-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "terry-towel-short",
+      "name": "Terry Towel Short",
+      "cat": "shorts",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/terry-towel-short-navy-front.jpg",
+          "back": "assets/products/terry-towel-short-navy-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "dad-cap",
+      "name": "Dad Cap",
+      "cat": "headwear",
+      "colours": [
+        {
+          "name": "Beige",
+          "front": "assets/products/dad-cap-beige-front.jpg",
+          "back": "assets/products/dad-cap-beige-back.jpg"
+        },
+        {
+          "name": "Navy",
+          "front": "assets/products/dad-cap-navy-front.jpg",
+          "back": "assets/products/dad-cap-navy-back.jpg"
+        },
+        {
+          "name": "Sky Blue",
+          "front": "assets/products/dad-cap-sky-blue-front.jpg",
+          "back": "assets/products/dad-cap-sky-blue-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ripstop-cap",
+      "name": "Ripstop Cap",
+      "cat": "headwear",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/ripstop-cap-navy-front.jpg",
+          "back": "assets/products/ripstop-cap-navy-back.jpg"
+        },
+        {
+          "name": "White",
+          "front": "assets/products/ripstop-cap-white-front.jpg",
+          "back": "assets/products/ripstop-cap-white-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bucket-hat",
+      "name": "Bucket Hat",
+      "cat": "headwear",
+      "colours": [
+        {
+          "name": "Blue",
+          "front": "assets/products/bucket-hat-blue-front.jpg",
+          "back": "assets/products/bucket-hat-blue-back.jpg"
+        }
+      ]
+    }
   ];
   const CATS = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const CAT_LONG = { tees: 'Unisex T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const tile = (p) => `
+  const tile = (p) => {
+    const c = p.colours[0];
+    return `
     <a class="ptile" href="product.html#${p.id}">
-      <div class="pimg">${p.img ? `<img src="${p.img}" alt="${esc(p.name)}" loading="lazy">` : '<span class="pimg-label">Flatlay</span>'}${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
+      <div class="pimg"><img src="${c.front}" alt="${esc(p.name)} in ${esc(c.name)}" loading="lazy"><img class="alt" src="${c.back}" alt="" loading="lazy">${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
       <div class="pmeta"><span class="pname">${esc(p.name)}</span><span class="pprice">[$PRICE]</span></div>
-      <div class="pcols">${esc(p.colours.join(' · '))}</div>
+      <div class="pcols">${p.colours.length > 1 ? p.colours.length + ' colours · ' : ''}${esc(p.colours.map((x) => x.name).join(' · '))}</div>
     </a>`;
+  };
   const count = (c) => PRODUCTS.filter((p) => p.cat === c).length;
   const indexList = (closeAttr) => ['tees', 'shorts', 'headwear'].map((c) =>
     `<a href="shop.html#${c}"${closeAttr}>${CAT_LONG[c]}<small>${count(c)}</small><span aria-hidden="true">↗</span></a>`).join('');
@@ -121,8 +344,8 @@
     const v = q.value.trim().toLowerCase();
     const SYN = { tees: 'tee t-shirt tshirt shirt', shorts: 'short', headwear: 'cap hat' };
     const stem = v.replace(/s$/, '');
-    const hits = v ? PRODUCTS.filter((p) => (p.name + ' ' + CATS[p.cat] + ' ' + SYN[p.cat] + ' ' + p.colours.join(' ')).toLowerCase().includes(stem)) : [];
-    sr.innerHTML = v ? (hits.length ? hits.map((p) => `<a href="product.html#${p.id}"><span>${esc(p.name)}</span><span class="small">${esc(CATS[p.cat])} · ${esc(p.colours.join(', '))}</span></a>`).join('') : '<p class="small" style="padding:12px 0">No matches yet. Try tee, short or cap.</p>') : '';
+    const hits = v ? PRODUCTS.filter((p) => (p.name + ' ' + CATS[p.cat] + ' ' + SYN[p.cat] + ' ' + p.colours.map((x) => x.name).join(' ')).toLowerCase().includes(stem)) : [];
+    sr.innerHTML = v ? (hits.length ? hits.map((p) => `<a href="product.html#${p.id}"><span>${esc(p.name)}</span><span class="small">${esc(CATS[p.cat])} · ${esc(p.colours.map((x) => x.name).join(', '))}</span></a>`).join('') : '<p class="small" style="padding:12px 0">No matches yet. Try tee, short or cap.</p>') : '';
   });
   document.getElementById('searchForm').addEventListener('submit', (e) => { e.preventDefault(); const first = sr.querySelector('a'); if (first) location.href = first.getAttribute('href'); });
 
@@ -137,11 +360,15 @@
     document.getElementById('subtotal').textContent = n ? '[$PRICE] × ' + n : '$0.00 AUD';
     document.getElementById('bagItems').innerHTML = bag.length ? bag.map((i, ix) => {
       const p = PRODUCTS.find((x) => x.id === i.id);
-      return `<div class="line-item"><a href="product.html#${p.id}" class="pimg">${p.img ? `<img src="${p.img}" alt="">` : ''}</a><div><div>${esc(p.name)}</div><div class="small" style="margin-top:4px">${esc(i.colour)} · ${esc(i.size)}</div><div class="qty"><button type="button" data-q="${ix}" data-d="-1" aria-label="Remove one">−</button><span>${i.qty}</span><button type="button" data-q="${ix}" data-d="1" aria-label="Add one">+</button></div></div></div>`;
+      const c = p.colours.find((x) => x.name === i.colour) || p.colours[0];
+      return `<div class="line-item"><a href="product.html#${p.id}" class="pimg"><img src="${c.front}" alt=""></a><div><div>${esc(p.name)}</div><div class="small" style="margin-top:4px">${esc(i.colour)} · ${esc(i.size)}</div><div class="qty"><button type="button" data-q="${ix}" data-d="-1" aria-label="Remove one">−</button><span>${i.qty}</span><button type="button" data-q="${ix}" data-d="1" aria-label="Add one">+</button></div></div></div>`;
     }).join('') : '<p style="color:var(--ink-2)">Your bag is empty.</p>';
     const inBag = new Set(bag.map((i) => PRODUCTS.find((p) => p.id === i.id).cat));
-    const sugg = ['tees', 'shorts', 'headwear'].filter((c) => !inBag.has(c)).concat(['tees', 'shorts', 'headwear']).slice(0, 3).map((c) => PRODUCTS.find((p) => p.cat === c));
-    document.getElementById('bagCl').innerHTML = sugg.map((p) => `<a href="product.html#${p.id}" class="pimg" aria-label="${esc(p.name)}">${p.img ? `<img src="${p.img}" alt="">` : `<span class="pimg-label" style="font-size:9px;padding:4px 6px">${esc(CATS[p.cat])}</span>`}</a>`).join('');
+    const inIds = new Set(bag.map((i) => i.id));
+    const order = ['tees', 'shorts', 'headwear'].filter((c) => !inBag.has(c)).concat(['tees', 'shorts', 'headwear']);
+    const sugg = [];
+    for (const c of order) { const p = PRODUCTS.find((x) => x.cat === c && !inIds.has(x.id) && !sugg.includes(x)); if (p) sugg.push(p); if (sugg.length === 3) break; }
+    document.getElementById('bagCl').innerHTML = sugg.map((p) => `<a href="product.html#${p.id}" class="pimg" aria-label="${esc(p.name)}"><img src="${p.colours[0].front}" alt=""></a>`).join('');
   };
   document.getElementById('bagItems').addEventListener('click', (e) => {
     const b = e.target.closest('[data-q]'); if (!b) return;
