@@ -21,8 +21,23 @@
     </div>
   </section>
 
+  <section class="wrap below-fold" aria-labelledby="new-title" style="position:relative">
+    <span class="note" style="top:4px">2 · Product straight under the hero, Calibre style · quick filter by category</span>
+    <div class="row-hd">
+      <h2 class="sr" id="new-title">New in</h2>
+      <div class="qtabs" role="group" aria-label="Filter new arrivals" id="qtabs">
+        <button type="button" data-c="all" aria-pressed="true">New in</button>
+        <button type="button" data-c="tees" aria-pressed="false">T-shirts</button>
+        <button type="button" data-c="shorts" aria-pressed="false">Shorts</button>
+        <button type="button" data-c="headwear" aria-pressed="false">Headwear</button>
+      </div>
+      <a class="textlink" href="shop.html" id="newAll">Shop all <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="pgrid" id="newIn"></div>
+  </section>
+
   <section id="collection" class="collection" aria-labelledby="collection-title" style="position:relative">
-    <span class="note" style="top:16px">2 · Category index: three launch categories as a list</span>
+    <span class="note" style="top:16px">3 · Category index: three launch categories as a list</span>
     <div class="photo"><img src="assets/kids-beach.jpg" alt="Four kids on the beach in Mango Jack tees." loading="lazy"></div>
     <div class="side">
       <span class="label">Summer 26</span>
@@ -32,14 +47,6 @@
     </div>
   </section>
 
-  <section class="wrap" aria-labelledby="new-title" style="position:relative;padding-top:clamp(50px,7vw,105px);padding-bottom:clamp(50px,7vw,105px)">
-    <span class="note" style="top:16px">3 · Product row · one from each category</span>
-    <div class="row-hd">
-      <div><span class="label">Just landed</span><h2 class="h2" id="new-title">New in</h2></div>
-      <a class="textlink" href="shop.html">Shop all <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="pgrid" id="newIn"></div>
-  </section>
 
   <section class="media shade film" aria-labelledby="film-title">
     <span class="note" style="top:16px">4 · Full-bleed campaign film · add the MP4 when ready</span>
@@ -86,7 +93,14 @@
   const { PRODUCTS, tile, indexList } = MJ;
   document.getElementById('homeIndex').innerHTML = indexList('');
   const pick = ['crab-tee', 'corduroy-short', 'patch-trucker', 'long-sleeve-sun-tee'];
-  document.getElementById('newIn').innerHTML = pick.map((id) => tile(PRODUCTS.find((p) => p.id === id))).join('');
+  const showNew = (c) => {
+    const list = c === 'all' ? pick.map((id) => PRODUCTS.find((p) => p.id === id)) : PRODUCTS.filter((p) => p.cat === c).slice(0, 4);
+    document.getElementById('newIn').innerHTML = list.map(tile).join('');
+    document.getElementById('newAll').href = c === 'all' ? 'shop.html' : 'shop.html#' + c;
+    document.querySelectorAll('#qtabs button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.c === c));
+  };
+  document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
+  showNew('all');
   MJ.sizePicker(document.getElementById('featureBuy'), () => 'corduroy-short', () => 'Sand');
 
   // Film: play an MP4 once its address is set in data-film-url, or preview a local file
