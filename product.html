@@ -64,7 +64,7 @@
   const SIZES = { tees: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], shorts: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], headwear: ['One size'] };
   const inStock = (p, col, size) => !p.stock || !p.stock[col] || p.stock[col][size] !== false;
   const drawSizes = () => {
-    const p = current; const list = SIZES[p.cat];
+    const p = current; const list = p.sizes || SIZES[p.cat];
     const avail = list.filter((x) => inStock(p, colour, x));
     const def = avail.includes('M') ? 'M' : (avail[0] || list[0]);
     document.getElementById('sizes').innerHTML = list.map((x) => { const oos = !inStock(p, colour, x); return `<button class="chip${oos ? ' oos' : ''}" type="button" data-size aria-pressed="${x === def}"${oos ? ` data-oos="1" aria-label="${x}, sold out"` : ''}>${x}</button>`; }).join('');
@@ -88,7 +88,7 @@
     document.title = 'Mango Jack · ' + p.name + ' (Draft)';
     document.getElementById('pName').textContent = p.name;
     document.getElementById('pPrice').textContent = MJ.priceText(p);
-    document.getElementById('pTag').textContent = (p.tag ? p.tag + ' · ' : '') + (p.cat === 'headwear' ? 'Headwear' : 'Unisex');
+    document.getElementById('pTag').textContent = (p.tag ? p.tag + ' · ' : '') + (p.fit || (p.cat === 'headwear' ? 'Headwear' : 'Unisex'));
     document.getElementById('pDesc').textContent = COPY[p.cat][0];
     document.getElementById('pDetails').textContent = COPY[p.cat][1];
     const cc = document.getElementById('crumbCat'); cc.textContent = CAT_LONG[p.cat]; cc.href = 'shop.html#' + p.cat;

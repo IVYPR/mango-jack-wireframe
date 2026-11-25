@@ -189,6 +189,165 @@
       ]
     },
     {
+      "id": "ladies-fitted-tee",
+      "name": "Ladies Fitted Tee",
+      "cat": "tees",
+      "fit": "Ladies",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/ladies-fitted-tee-white-front.jpg",
+          "back": "assets/products/ladies-fitted-tee-white-back.jpg"
+        }
+      ]
+    },
+    {
+      "id": "kids-crab-tee",
+      "name": "Kids Crab Tee",
+      "cat": "tees",
+      "fit": "Kids",
+      "colours": [
+        {
+          "name": "Azure Blue",
+          "front": "assets/products/kids-crab-tee-azure-blue-front.jpg",
+          "back": "assets/products/kids-crab-tee-azure-blue-back.jpg"
+        }
+      ],
+      "sizes": [
+        "4Y",
+        "6Y",
+        "8Y",
+        "10Y",
+        "12Y",
+        "14Y",
+        "16Y"
+      ],
+      "price": 54.99,
+      "stock": {
+        "Azure Blue": {
+          "4Y": false,
+          "6Y": false,
+          "8Y": false,
+          "10Y": false,
+          "12Y": false,
+          "14Y": false,
+          "16Y": false
+        }
+      }
+    },
+    {
+      "id": "kids-gold-outline-tee",
+      "name": "Kids Gold Outline Tee",
+      "cat": "tees",
+      "fit": "Kids",
+      "colours": [
+        {
+          "name": "Blue",
+          "front": "assets/products/kids-gold-outline-tee-blue-front.jpg",
+          "back": "assets/products/kids-gold-outline-tee-blue-back.jpg"
+        }
+      ],
+      "sizes": [
+        "4Y",
+        "6Y",
+        "8Y",
+        "10Y",
+        "12Y",
+        "14Y",
+        "16Y"
+      ],
+      "price": 54.99,
+      "stock": {
+        "Blue": {
+          "4Y": false,
+          "6Y": false,
+          "8Y": false,
+          "10Y": false,
+          "12Y": false,
+          "14Y": false,
+          "16Y": false
+        }
+      }
+    },
+    {
+      "id": "kids-ruby-bubble-tee",
+      "name": "Kids Ruby Bubble Tee",
+      "cat": "tees",
+      "fit": "Kids",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/kids-ruby-bubble-tee-white-front.jpg",
+          "back": "assets/products/kids-ruby-bubble-tee-white-back.jpg"
+        }
+      ],
+      "sizes": [
+        "4Y",
+        "6Y",
+        "8Y",
+        "10Y",
+        "12Y",
+        "14Y",
+        "16Y"
+      ],
+      "price": 54.99,
+      "stock": {
+        "White": {
+          "4Y": true,
+          "6Y": true,
+          "8Y": true,
+          "10Y": true,
+          "12Y": true,
+          "14Y": false,
+          "16Y": false
+        }
+      }
+    },
+    {
+      "id": "kids-sand-whiting-tee",
+      "name": "Kids Sand Whiting Tee",
+      "cat": "tees",
+      "fit": "Kids",
+      "colours": [
+        {
+          "name": "Cream",
+          "front": "assets/products/kids-sand-whiting-tee-cream-front.jpg",
+          "back": "assets/products/kids-sand-whiting-tee-cream-back.jpg"
+        }
+      ],
+      "sizes": [
+        "4Y",
+        "6Y",
+        "8Y",
+        "10Y",
+        "12Y",
+        "14Y",
+        "16Y"
+      ]
+    },
+    {
+      "id": "kids-yellow-bubble-tee",
+      "name": "Kids Yellow Bubble Tee",
+      "cat": "tees",
+      "fit": "Kids",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/kids-yellow-bubble-tee-navy-front.jpg",
+          "back": "assets/products/kids-yellow-bubble-tee-navy-back.jpg"
+        }
+      ],
+      "sizes": [
+        "4Y",
+        "6Y",
+        "8Y",
+        "10Y",
+        "12Y",
+        "14Y",
+        "16Y"
+      ]
+    },
+    {
       "id": "broadwater-cord-short",
       "name": "Broadwater Cord Short",
       "cat": "shorts",
@@ -284,6 +443,64 @@
       ]
     },
     {
+      "id": "ladies-broadwater-cord-short",
+      "name": "Ladies Broadwater Cord Short",
+      "cat": "shorts",
+      "fit": "Ladies",
+      "colours": [
+        {
+          "name": "Beige",
+          "front": "assets/products/ladies-broadwater-cord-short-beige-front.jpg",
+          "back": "assets/products/ladies-broadwater-cord-short-beige-back.jpg"
+        },
+        {
+          "name": "Navy",
+          "front": "assets/products/ladies-broadwater-cord-short-navy-front.jpg",
+          "back": "assets/products/ladies-broadwater-cord-short-navy-back.jpg"
+        },
+        {
+          "name": "Salmon",
+          "front": "assets/products/ladies-broadwater-cord-short-salmon-front.jpg",
+          "back": "assets/products/ladies-broadwater-cord-short-salmon-back.jpg"
+        }
+      ],
+      "sizes": [
+        "6",
+        "8",
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "price": 79.99,
+      "stock": {
+        "Beige": {
+          "6": false,
+          "8": true,
+          "10": true,
+          "12": true,
+          "14": true,
+          "16": true
+        },
+        "Navy": {
+          "6": false,
+          "8": true,
+          "10": false,
+          "12": true,
+          "14": true,
+          "16": false
+        },
+        "Salmon": {
+          "6": false,
+          "8": true,
+          "10": true,
+          "12": true,
+          "14": true,
+          "16": true
+        }
+      }
+    },
+    {
       "id": "dad-cap",
       "name": "Dad Cap",
       "cat": "headwear",
@@ -345,10 +562,42 @@
           "back": "assets/products/bucket-hat-blue-back.jpg"
         }
       ]
+    },
+    {
+      "id": "ladies-cap",
+      "name": "Ladies Cap",
+      "cat": "headwear",
+      "fit": "Ladies",
+      "colours": [
+        {
+          "name": "Pink",
+          "front": "assets/products/ladies-cap-pink-front.jpg",
+          "back": "assets/products/ladies-cap-pink-back.jpg"
+        },
+        {
+          "name": "White",
+          "front": "assets/products/ladies-cap-white-front.jpg",
+          "back": "assets/products/ladies-cap-white-back.jpg"
+        },
+        {
+          "name": "Light Blue",
+          "front": "assets/products/ladies-cap-light-blue-front.jpg",
+          "back": "assets/products/ladies-cap-light-blue-back.jpg"
+        }
+      ],
+      "stock": {
+        "Pink": {
+          "One size": true
+        },
+        "White": {
+          "One size": true
+        }
+      },
+      "price": 49.99
     }
   ];
   const CATS = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
-  const CAT_LONG = { tees: 'Unisex T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
+  const CAT_LONG = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
   const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const money = (n) => '$' + n.toFixed(2);
   const priceText = (p) => p.price ? money(p.price) : '[$PRICE]';
