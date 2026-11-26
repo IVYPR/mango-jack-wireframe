@@ -696,7 +696,7 @@
   const wearing = (l) => l.items.map(([pid, c]) => { const p = PRODUCTS.find((x) => x.id === pid); return p ? `<a href="product.html#${pid}">${esc(p.name)}</a>` : ''; }).filter(Boolean).join(' · ');
   const lookTile = (l) => `
     <figure class="look">
-      <a class="pimg" href="product.html#${l.items[0][0]}"><img src="${l.img}" alt="Model wearing ${esc(l.items.map(([pid]) => (PRODUCTS.find((x) => x.id === pid) || {}).name).join(' and '))}" loading="lazy"></a>
+      <a class="pimg" href="product.html#${l.items[0][0]}"><img src="${l.img}" alt="Model wearing ${esc(l.items.map(([pid]) => (PRODUCTS.find((x) => x.id === pid) || {}).name).join(' and '))}" loading="lazy">${(() => { const p = PRODUCTS.find((x) => x.id === l.items[0][0]); const c = p && (p.colours.find((x) => x.name === l.items[0][1]) || p.colours[0]); return c ? `<img class="alt alt-flat" src="${c.front}" alt="" loading="lazy">` : ''; })()}</a>
       <figcaption><span class="small">Wearing</span> ${wearing(l)}</figcaption>
     </figure>`;
   const CATS = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
@@ -713,7 +713,7 @@
     return `
     <div class="ptile" data-id="${p.id}">
       <a href="product.html#${p.id}" class="ptile-link">
-        <div class="pimg"><img src="${c.front}" alt="${esc(p.name)} in ${esc(c.name)}" loading="lazy"><img class="alt" src="${c.back}" alt="" loading="lazy">${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
+        <div class="pimg"><img src="${c.front}" alt="${esc(p.name)} in ${esc(c.name)}" loading="lazy">${(() => { const l = looksFor(p.id, c.name)[0]; return l ? `<img class="alt alt-look" src="${l.img}" alt="" loading="lazy">` : `<img class="alt" src="${c.back}" alt="" loading="lazy">`; })()}${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
         <div class="pmeta"><span class="pname">${esc(p.name)}</span><span class="pprice">${soldOut(p) ? 'Sold out' : priceText(p)}</span></div>
         <div class="pcols">${p.group ? esc(c.name) : (p.colours.length > 1 ? p.colours.length + ' colours · ' : '') + esc(p.colours.map((x) => x.name).join(' · '))}</div>
       </a>${swatches(p)}
