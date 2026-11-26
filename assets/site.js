@@ -697,7 +697,9 @@
     { img: 'assets/looks/seaway-pelagic-wading.jpg', items: [['seaway-swim-short-pelagic', 'Azure Blue']] },
     { img: 'assets/looks/ladies-cap-lightblue-riverbank.jpg', items: [['ladies-cap', 'Light Blue']] },
     { img: 'assets/looks/ladies-fitted-tee-back-riverbank.jpg', items: [['ladies-fitted-tee', 'White'], ['ladies-cap', 'Light Blue']] },
-    { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['marlin-compass-oversize-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] }
+    { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['marlin-compass-oversize-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/murray-cod-tee-line.jpg', items: [['murray-cod-fresh-tee', 'White']] },
+    { img: 'assets/looks/sand-whiting-tee-line.jpg', items: [['sand-whiting-tee', 'Beige']] }
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {
