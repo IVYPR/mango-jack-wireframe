@@ -675,12 +675,14 @@
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
+    { img: 'assets/looks/beige-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/marlin-navy-beige-cord-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige'], ['marlin-compass-oversize-tee', 'Navy']] },
     { img: 'assets/looks/offshore-beige-cord.jpg', items: [['offshore-fishing-club-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['ladies-broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/kids-crab.jpg', items: [['kids-crab-tee', 'Azure Blue']] },
     { img: 'assets/looks/ripstop-white.jpg', items: [['ripstop-cap', 'White']] },
     { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['bar-and-grill-tee', 'Blue'], ['broadwater-cord-short-navy', 'Navy']] },
+    { img: 'assets/looks/navy-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/large-outline-tee-hanging.jpg', items: [['large-outline-regfit-tee', 'White']] },
     { img: 'assets/looks/large-outline-tee.jpg', items: [['large-outline-regfit-tee', 'White']] },
     { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
@@ -692,7 +694,10 @@
     { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/ladies-cap-pink-car.jpg', items: [['ladies-cap', 'Pink']] },
     { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap', 'Beige']] },
-    { img: 'assets/looks/seaway-pelagic-wading.jpg', items: [['seaway-swim-short-pelagic', 'Azure Blue']] }
+    { img: 'assets/looks/seaway-pelagic-wading.jpg', items: [['seaway-swim-short-pelagic', 'Azure Blue']] },
+    { img: 'assets/looks/ladies-cap-lightblue-riverbank.jpg', items: [['ladies-cap', 'Light Blue']] },
+    { img: 'assets/looks/ladies-fitted-tee-back-riverbank.jpg', items: [['ladies-fitted-tee', 'White'], ['ladies-cap', 'Light Blue']] },
+    { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['marlin-compass-oversize-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] }
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {
