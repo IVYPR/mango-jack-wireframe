@@ -69,7 +69,7 @@
 
   <section class="feature" aria-labelledby="short-title" style="position:relative">
     <span class="note" style="top:16px">6 · Featured product · colour swaps the photo · buy straight from the home page</span>
-    <a class="pimg" href="product.html#broadwater-cord-short" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-beige-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in beige."></a>
+    <a class="pimg" href="product.html#broadwater-cord-short" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-navy-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in navy."></a>
     <div class="buy" id="featureBuy">
       <div>
         <span class="label">New · Unisex</span>
@@ -78,7 +78,7 @@
       </div>
       <div><span id="featPrice">[$PRICE]</span> AUD</div>
       <div>
-        <span class="opt-label">Colour · <span id="featCol" style="margin-right:auto;margin-left:6px">Beige</span></span>
+        <span class="opt-label">Colour · <span id="featCol" style="margin-right:auto;margin-left:6px">Navy</span></span>
         <div class="chips" id="featCols" role="group" aria-label="Colour"></div>
       </div>
       <div>
@@ -114,7 +114,7 @@
   document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
   showNew('all');
   const cord = PRODUCTS.find((p) => p.id === 'broadwater-cord-short');
-  let featColour = cord.colours[0].name;
+  let featColour = 'Navy';
   document.getElementById('featPrice').textContent = MJ.priceText(cord);
   const sizeWrap = document.querySelector('#featureBuy .chips[aria-label="Size"]');
   const SZ = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
@@ -128,7 +128,7 @@
   let featPicker = null;
   drawFeatSizes();
   const colWrap = document.getElementById('featCols');
-  colWrap.innerHTML = cord.colours.map((c, i) => `<button class="chip" type="button" data-colour aria-pressed="${i === 0}">${c.name}</button>`).join('');
+  colWrap.innerHTML = cord.colours.map((c) => `<button class="chip" type="button" data-colour aria-pressed="${c.name === featColour}">${c.name}</button>`).join('');
   colWrap.addEventListener('click', (e) => {
     const b = e.target.closest('[data-colour]'); if (!b) return;
     colWrap.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
