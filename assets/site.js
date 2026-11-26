@@ -331,7 +331,7 @@
       ]
     },
     {
-      "id": "broadwater-cord-short",
+      "id": "broadwater-cord-short-beige",
       "name": "Broadwater Cord Short",
       "cat": "shorts",
       "colours": [
@@ -339,16 +339,6 @@
           "name": "Beige",
           "front": "assets/products/broadwater-cord-short-beige-front.jpg",
           "back": "assets/products/broadwater-cord-short-beige-back.jpg"
-        },
-        {
-          "name": "Navy",
-          "front": "assets/products/broadwater-cord-short-navy-front.jpg",
-          "back": "assets/products/broadwater-cord-short-navy-back.jpg"
-        },
-        {
-          "name": "Salmon",
-          "front": "assets/products/broadwater-cord-short-salmon-front.jpg",
-          "back": "assets/products/broadwater-cord-short-salmon-back.jpg"
         }
       ],
       "tag": "New",
@@ -364,7 +354,24 @@
           "3XL": true,
           "4XL": false,
           "5XL": false
-        },
+        }
+      },
+      "group": "broadwater-cord-short"
+    },
+    {
+      "id": "broadwater-cord-short-navy",
+      "name": "Broadwater Cord Short",
+      "cat": "shorts",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/broadwater-cord-short-navy-front.jpg",
+          "back": "assets/products/broadwater-cord-short-navy-back.jpg"
+        }
+      ],
+      "tag": "New",
+      "price": 79.99,
+      "stock": {
         "Navy": {
           "XS": false,
           "S": true,
@@ -375,7 +382,24 @@
           "3XL": true,
           "4XL": false,
           "5XL": false
-        },
+        }
+      },
+      "group": "broadwater-cord-short"
+    },
+    {
+      "id": "broadwater-cord-short-salmon",
+      "name": "Broadwater Cord Short",
+      "cat": "shorts",
+      "colours": [
+        {
+          "name": "Salmon",
+          "front": "assets/products/broadwater-cord-short-salmon-front.jpg",
+          "back": "assets/products/broadwater-cord-short-salmon-back.jpg"
+        }
+      ],
+      "tag": "New",
+      "price": 79.99,
+      "stock": {
         "Salmon": {
           "XS": false,
           "S": true,
@@ -387,7 +411,8 @@
           "4XL": false,
           "5XL": false
         }
-      }
+      },
+      "group": "broadwater-cord-short"
     },
     {
       "id": "seaway-swim-short-pelagic",
@@ -426,7 +451,7 @@
       ]
     },
     {
-      "id": "ladies-broadwater-cord-short",
+      "id": "ladies-broadwater-cord-short-beige",
       "name": "Ladies Broadwater Cord Short",
       "cat": "shorts",
       "fit": "Ladies",
@@ -435,16 +460,6 @@
           "name": "Beige",
           "front": "assets/products/ladies-broadwater-cord-short-beige-front.jpg",
           "back": "assets/products/ladies-broadwater-cord-short-beige-back.jpg"
-        },
-        {
-          "name": "Navy",
-          "front": "assets/products/ladies-broadwater-cord-short-navy-front.jpg",
-          "back": "assets/products/ladies-broadwater-cord-short-navy-back.jpg"
-        },
-        {
-          "name": "Salmon",
-          "front": "assets/products/ladies-broadwater-cord-short-salmon-front.jpg",
-          "back": "assets/products/ladies-broadwater-cord-short-salmon-back.jpg"
         }
       ],
       "sizes": [
@@ -464,7 +479,32 @@
           "12": true,
           "14": true,
           "16": true
-        },
+        }
+      },
+      "group": "ladies-broadwater-cord-short"
+    },
+    {
+      "id": "ladies-broadwater-cord-short-navy",
+      "name": "Ladies Broadwater Cord Short",
+      "cat": "shorts",
+      "fit": "Ladies",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/ladies-broadwater-cord-short-navy-front.jpg",
+          "back": "assets/products/ladies-broadwater-cord-short-navy-back.jpg"
+        }
+      ],
+      "sizes": [
+        "6",
+        "8",
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "price": 79.99,
+      "stock": {
         "Navy": {
           "6": false,
           "8": true,
@@ -472,7 +512,32 @@
           "12": true,
           "14": true,
           "16": false
-        },
+        }
+      },
+      "group": "ladies-broadwater-cord-short"
+    },
+    {
+      "id": "ladies-broadwater-cord-short-salmon",
+      "name": "Ladies Broadwater Cord Short",
+      "cat": "shorts",
+      "fit": "Ladies",
+      "colours": [
+        {
+          "name": "Salmon",
+          "front": "assets/products/ladies-broadwater-cord-short-salmon-front.jpg",
+          "back": "assets/products/ladies-broadwater-cord-short-salmon-back.jpg"
+        }
+      ],
+      "sizes": [
+        "6",
+        "8",
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "price": 79.99,
+      "stock": {
         "Salmon": {
           "6": false,
           "8": true,
@@ -481,7 +546,8 @@
           "14": true,
           "16": true
         }
-      }
+      },
+      "group": "ladies-broadwater-cord-short"
     },
     {
       "id": "dad-cap",
@@ -581,18 +647,18 @@
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
-    { img: 'assets/looks/offshore-beige-cord.jpg', items: [['offshore-fishing-club-tee', 'Navy'], ['broadwater-cord-short', 'Beige']] },
-    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['ladies-broadwater-cord-short', 'Beige']] },
+    { img: 'assets/looks/offshore-beige-cord.jpg', items: [['offshore-fishing-club-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['ladies-broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/kids-crab.jpg', items: [['kids-crab-tee', 'Azure Blue']] },
     { img: 'assets/looks/ripstop-white.jpg', items: [['ripstop-cap', 'White']] },
-    { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['bar-and-grill-tee', 'Blue'], ['broadwater-cord-short', 'Navy']] },
+    { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['bar-and-grill-tee', 'Blue'], ['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/large-outline-tee.jpg', items: [['large-outline-regfit-tee', 'White']] },
-    { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short', 'Navy']] },
-    { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short', 'Navy']] },
+    { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
+    { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/kids-ruby-1.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
     { img: 'assets/looks/kids-ruby-2.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
-    { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short', 'Salmon']] },
-    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short', 'Salmon']] }
+    { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
+    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] }
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {
@@ -611,19 +677,30 @@
   const money = (n) => '$' + n.toFixed(2);
   const priceText = (p) => p.price ? money(p.price) : '[$PRICE]';
   const soldOut = (p) => !!p.stock && Object.values(p.stock).every((c) => Object.values(c).every((v) => !v));
+  const SWATCH = { Beige: '#d8cbb2', Navy: '#1f2a44', Salmon: '#e19a87' };
+  const siblings = (p) => p.group ? PRODUCTS.filter((x) => x.group === p.group) : [p];
+  const swatches = (p) => p.group ? `<div class="swatches" role="group" aria-label="Colour">${siblings(p).map((s) => `<button type="button" class="swatch" data-to="${s.id}" aria-pressed="${s.id === p.id}" aria-label="${esc(s.colours[0].name)}" title="${esc(s.colours[0].name)}" style="--sw:${SWATCH[s.colours[0].name] || '#ccc'}"></button>`).join('')}</div>` : '';
   const tile = (p) => {
     const c = p.colours[0];
     return `
-    <a class="ptile" href="product.html#${p.id}">
-      <div class="pimg"><img src="${c.front}" alt="${esc(p.name)} in ${esc(c.name)}" loading="lazy"><img class="alt" src="${c.back}" alt="" loading="lazy">${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
-      <div class="pmeta"><span class="pname">${esc(p.name)}</span><span class="pprice">${soldOut(p) ? 'Sold out' : priceText(p)}</span></div>
-      <div class="pcols">${p.colours.length > 1 ? p.colours.length + ' colours · ' : ''}${esc(p.colours.map((x) => x.name).join(' · '))}</div>
-    </a>`;
+    <div class="ptile" data-id="${p.id}">
+      <a href="product.html#${p.id}" class="ptile-link">
+        <div class="pimg"><img src="${c.front}" alt="${esc(p.name)} in ${esc(c.name)}" loading="lazy"><img class="alt" src="${c.back}" alt="" loading="lazy">${p.tag ? `<span class="ptag">${esc(p.tag)}</span>` : ''}</div>
+        <div class="pmeta"><span class="pname">${esc(p.name)}</span><span class="pprice">${soldOut(p) ? 'Sold out' : priceText(p)}</span></div>
+        <div class="pcols">${p.group ? esc(c.name) : (p.colours.length > 1 ? p.colours.length + ' colours · ' : '') + esc(p.colours.map((x) => x.name).join(' · '))}</div>
+      </a>${swatches(p)}
+    </div>`;
   };
+  // Clicking a colour dot swaps that tile to the sibling listing
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.ptile .swatch'); if (!b) return;
+    const next = PRODUCTS.find((x) => x.id === b.dataset.to); const t = b.closest('.ptile');
+    if (next && t) { t.outerHTML = tile(next); const nt = document.querySelector(`.ptile[data-id="${next.id}"] .swatch[data-to="${next.id}"]`); if (nt) nt.focus(); }
+  });
   const count = (c) => PRODUCTS.filter((p) => p.cat === c).length;
   const indexList = (closeAttr) => ['tees', 'shorts', 'headwear'].map((c) =>
     `<a href="shop.html#${c}"${closeAttr}>${CAT_LONG[c]}<small>${count(c)}</small><span aria-hidden="true">↗</span></a>`).join('');
-  window.MJ = { PRODUCTS, CATS, CAT_LONG, esc, tile, indexList, money, priceText, LOOKS, looksFor, lookTile };
+  window.MJ = { PRODUCTS, CATS, CAT_LONG, esc, tile, indexList, money, priceText, LOOKS, looksFor, lookTile, siblings, SWATCH };
 
   const header = `
   <header class="site" id="hdr">

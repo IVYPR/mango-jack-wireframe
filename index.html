@@ -69,7 +69,7 @@
 
   <section class="feature" aria-labelledby="short-title" style="position:relative">
     <span class="note" style="top:16px">6 · Featured product · colour swaps the photo · buy straight from the home page</span>
-    <a class="pimg" href="product.html#broadwater-cord-short" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-navy-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in navy."></a>
+    <a class="pimg" data-feat-link href="product.html#broadwater-cord-short-navy" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-navy-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in navy."></a>
     <div class="buy" id="featureBuy">
       <div>
         <span class="label">New · Unisex</span>
@@ -93,7 +93,7 @@
         </div>
       </div>
       <button class="btn" type="button" data-add>Add to bag <span aria-hidden="true">→</span></button>
-      <a class="textlink" href="product.html#broadwater-cord-short">Full details <span aria-hidden="true">↗</span></a>
+      <a class="textlink" data-feat-link href="product.html#broadwater-cord-short-navy">Full details <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </main>
@@ -104,7 +104,7 @@
 {
   const { PRODUCTS, tile, indexList } = MJ;
   document.getElementById('homeIndex').innerHTML = indexList('');
-  const pick = ['offshore-fishing-club-tee', 'broadwater-cord-short', 'dad-cap', 'marlin-compass-oversize-tee'];
+  const pick = ['offshore-fishing-club-tee', 'broadwater-cord-short-navy', 'dad-cap', 'marlin-compass-oversize-tee'];
   const showNew = (c) => {
     const list = c === 'all' ? pick.map((id) => PRODUCTS.find((p) => p.id === id)) : PRODUCTS.filter((p) => p.cat === c).slice(0, 4);
     document.getElementById('newIn').innerHTML = list.map(tile).join('');
@@ -113,32 +113,31 @@
   };
   document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
   showNew('all');
-  const cord = PRODUCTS.find((p) => p.id === 'broadwater-cord-short');
-  let featColour = 'Navy';
-  document.getElementById('featPrice').textContent = MJ.priceText(cord);
+  // Featured short: each colour is its own listing; the colour buttons switch between them
+  let cord = PRODUCTS.find((p) => p.id === 'broadwater-cord-short-navy');
   const sizeWrap = document.querySelector('#featureBuy .chips[aria-label="Size"]');
+  const colWrap = document.getElementById('featCols');
   const SZ = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
-  const drawFeatSizes = () => {
-    const st = (cord.stock && cord.stock[featColour]) || {};
+  let featPicker = null;
+  const drawFeature = () => {
+    const c = cord.colours[0];
+    const st = (cord.stock && cord.stock[c.name]) || {};
     const avail = SZ.filter((x) => st[x] !== false);
     const def = avail.includes('M') ? 'M' : (avail[0] || 'M');
     sizeWrap.innerHTML = SZ.map((x) => { const oos = st[x] === false; return `<button class="chip${oos ? ' oos' : ''}" type="button" data-size aria-pressed="${x === def}"${oos ? ` data-oos="1" aria-label="${x}, sold out"` : ''}>${x}</button>`; }).join('');
+    colWrap.innerHTML = MJ.siblings(cord).map((s) => `<button class="chip" type="button" data-to="${s.id}" aria-pressed="${s.id === cord.id}">${s.colours[0].name}</button>`).join('');
+    const img = document.getElementById('featImg'); img.src = c.front; img.alt = 'Mango Jack Broadwater Cord Short in ' + c.name.toLowerCase() + '.';
+    document.getElementById('featCol').textContent = c.name;
+    document.getElementById('featPrice').textContent = MJ.priceText(cord);
+    document.querySelectorAll('[data-feat-link]').forEach((a) => { a.href = 'product.html#' + cord.id; });
     if (featPicker) featPicker.reset();
   };
-  let featPicker = null;
-  drawFeatSizes();
-  const colWrap = document.getElementById('featCols');
-  colWrap.innerHTML = cord.colours.map((c) => `<button class="chip" type="button" data-colour aria-pressed="${c.name === featColour}">${c.name}</button>`).join('');
+  drawFeature();
   colWrap.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-colour]'); if (!b) return;
-    colWrap.querySelectorAll('.chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
-    b.setAttribute('aria-pressed', 'true'); featColour = b.textContent;
-    const c = cord.colours.find((x) => x.name === featColour);
-    const img = document.getElementById('featImg'); img.src = c.front; img.alt = 'Mango Jack Broadwater Cord Short in ' + c.name.toLowerCase() + '.';
-    document.getElementById('featCol').textContent = featColour;
-    drawFeatSizes();
+    const b = e.target.closest('[data-to]'); if (!b) return;
+    cord = PRODUCTS.find((p) => p.id === b.dataset.to); drawFeature();
   });
-  featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => 'broadwater-cord-short', () => featColour);
+  featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => cord.id, () => cord.colours[0].name);
 
   // Shop the look
   document.getElementById('homeLooks').innerHTML = MJ.LOOKS.slice(0, 4).map(MJ.lookTile).join('');

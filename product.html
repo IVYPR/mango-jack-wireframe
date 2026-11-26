@@ -84,7 +84,7 @@
       '<div class="media" style="aspect-ratio:1/1"><span class="ph-name">On-body</span></div>');
   };
   const render = () => {
-    const p = PRODUCTS.find((x) => x.id === location.hash.slice(1)) || PRODUCTS.find((x) => x.id === 'broadwater-cord-short');
+    const p = PRODUCTS.find((x) => x.id === location.hash.slice(1)) || PRODUCTS.find((x) => x.id === 'broadwater-cord-short-navy');
     current = p; colour = p.colours[0].name;
     document.title = 'Mango Jack · ' + p.name + ' (Draft)';
     document.getElementById('pName').textContent = p.name;
@@ -96,7 +96,9 @@
 
     drawGallery();
 
-    document.getElementById('colours').innerHTML = p.colours.map((c, i) => `<button class="chip" type="button" data-colour aria-pressed="${i === 0}">${esc(c.name)}</button>`).join('');
+    document.getElementById('colours').innerHTML = p.group
+      ? MJ.siblings(p).map((s) => `<button class="chip" type="button" data-to="${s.id}" aria-pressed="${s.id === p.id}">${esc(s.colours[0].name)}</button>`).join('')
+      : p.colours.map((c, i) => `<button class="chip" type="button" data-colour aria-pressed="${i === 0}">${esc(c.name)}</button>`).join('');
     document.getElementById('colName').textContent = colour;
     drawSizes();
 
@@ -106,6 +108,8 @@
   };
 
   document.getElementById('colours').addEventListener('click', (e) => {
+    const to = e.target.closest('[data-to]');
+    if (to) { history.replaceState(null, '', 'product.html#' + to.dataset.to); render(); return; }
     const b = e.target.closest('[data-colour]'); if (!b) return;
     document.querySelectorAll('#colours .chip').forEach((x) => x.setAttribute('aria-pressed', 'false'));
     b.setAttribute('aria-pressed', 'true'); colour = b.textContent; document.getElementById('colName').textContent = colour;
