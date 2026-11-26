@@ -680,6 +680,7 @@
     { img: 'assets/looks/kids-crab.jpg', items: [['kids-crab-tee', 'Azure Blue']] },
     { img: 'assets/looks/ripstop-white.jpg', items: [['ripstop-cap', 'White']] },
     { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['bar-and-grill-tee', 'Blue'], ['broadwater-cord-short-navy', 'Navy']] },
+    { img: 'assets/looks/large-outline-tee-hanging.jpg', items: [['large-outline-regfit-tee', 'White']] },
     { img: 'assets/looks/large-outline-tee.jpg', items: [['large-outline-regfit-tee', 'White']] },
     { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
