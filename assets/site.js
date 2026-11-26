@@ -689,7 +689,8 @@
     { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/ladies-cap-pink-car.jpg', items: [['ladies-cap', 'Pink']] },
-    { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap', 'Beige']] }
+    { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap', 'Beige']] },
+    { img: 'assets/looks/seaway-pelagic-wading.jpg', items: [['seaway-swim-short-pelagic', 'Azure Blue']] }
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {
