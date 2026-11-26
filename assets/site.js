@@ -710,9 +710,9 @@
     return has.filter((l) => l.items.some(([pid, c]) => pid === id && c === colour)).concat(has.filter((l) => !l.items.some(([pid, c]) => pid === id && c === colour)));
   };
   const wearing = (l) => l.items.map(([pid, c]) => { const p = PRODUCTS.find((x) => x.id === pid); return p ? `<a href="product.html#${pid}">${esc(p.name)}</a>` : ''; }).filter(Boolean).join(' · ');
-  const lookTile = (l) => `
+  const lookTile = (l, opts = {}) => `
     <figure class="look">
-      <a class="pimg" href="product.html#${l.items[0][0]}"><img src="${l.img}" alt="Model wearing ${esc(l.items.map(([pid]) => (PRODUCTS.find((x) => x.id === pid) || {}).name).join(' and '))}" loading="lazy">${(() => { const p = PRODUCTS.find((x) => x.id === l.items[0][0]); const c = p && (p.colours.find((x) => x.name === l.items[0][1]) || p.colours[0]); return c ? `<img class="alt alt-flat" src="${c.front}" alt="" loading="lazy">` : ''; })()}</a>
+      <a class="pimg" href="product.html#${l.items[0][0]}"><img src="${l.img}" alt="Model wearing ${esc(l.items.map(([pid]) => (PRODUCTS.find((x) => x.id === pid) || {}).name).join(' and '))}" loading="lazy">${(() => { const p = PRODUCTS.find((x) => x.id === l.items[0][0]); const c = p && (p.colours.find((x) => x.name === l.items[0][1]) || p.colours[0]); return c && opts.flat !== false ? `<img class="alt alt-flat" src="${c.front}" alt="" loading="lazy">` : ''; })()}</a>
       <figcaption><span class="small">Wearing</span> ${wearing(l)}</figcaption>
     </figure>`;
   const CATS = { tees: 'T-shirts', shorts: 'Shorts', headwear: 'Headwear' };
