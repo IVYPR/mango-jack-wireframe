@@ -39,7 +39,9 @@
           "4XL": false,
           "5XL": false
         }
-      }
+      },
+      "desc": "This tee features a bold marlin graphic combined with a compass design and well-connected typography to evoke a strong offshore-inspired sense of adventure and angling excitement.",
+      "fabric": "Oversized Tee, 63% cotton 37% polyester 225gsm"
     },
     {
       "id": "bar-and-grill-tee",
@@ -93,7 +95,9 @@
           "4XL": false,
           "5XL": false
         }
-      }
+      },
+      "desc": "A clean, easy-wearing design made to pair effortlessly with your favourite shorts or boardies. Featuring a simple outline logo, the understated design makes it an easy choice for everyday wear without losing that relaxed saltwater feel.",
+      "fabric": "Reg Fit Tee, 100% cotton 195gsm"
     },
     {
       "id": "large-outline-regfit-tee",
@@ -131,7 +135,9 @@
           "4XL": false,
           "5XL": false
         }
-      }
+      },
+      "desc": "This design features the heavyweight fish of Australia's freshwater waterways. Growing to an impressive size, the charismatic Murray Cod has been accurately hand drawn and placed front and centre in this stunning design.",
+      "fabric": "Reg Fit Tee, 100% cotton 195gsm"
     },
     {
       "id": "sand-whiting-tee",
@@ -157,7 +163,9 @@
           "4XL": false,
           "5XL": false
         }
-      }
+      },
+      "desc": "At the heart of this design is a meticulous hand drawn pencil artwork and has been created for your family adventures and for anyone who has an admiration for the beautiful sand whiting, the ghost of the sand flats.",
+      "fabric": "Reg Fit Tee, 100% cotton 195gsm"
     },
     {
       "id": "noosa-north-reef-tee",
@@ -216,7 +224,9 @@
           "14Y": false,
           "16Y": false
         }
-      }
+      },
+      "desc": "This tee design features everyone's favourite crustacean, the mighty mud crab, and has been arranged in a playful yet stylish print for kids who are living a life well fished.",
+      "fabric": "Youth Tee, 100% cotton 195gsm"
     },
     {
       "id": "kids-gold-outline-tee",
@@ -250,7 +260,9 @@
           "14Y": false,
           "16Y": false
         }
-      }
+      },
+      "desc": "A clean, easy-wearing design made to pair effortlessly with your favourite shorts or boardies. Featuring a simple outline logo, the understated design makes it an easy choice for everyday wear without losing that relaxed saltwater feel.",
+      "fabric": "Youth Tee, 100% cotton 195gsm"
     },
     {
       "id": "kids-ruby-bubble-tee",
@@ -284,7 +296,9 @@
           "14Y": false,
           "16Y": false
         }
-      }
+      },
+      "desc": "This design is a throwback to the original kids design that kicked things off for us back in 2012 and was one of our fan favourite prints. This tee is a perfect blend of youthful versatility, playful colour and durability.",
+      "fabric": "Youth Tee, 100% cotton 195gsm"
     },
     {
       "id": "kids-sand-whiting-tee",
@@ -356,7 +370,9 @@
           "5XL": false
         }
       },
-      "group": "broadwater-cord-short"
+      "group": "broadwater-cord-short",
+      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
       "id": "broadwater-cord-short-navy",
@@ -384,7 +400,9 @@
           "5XL": false
         }
       },
-      "group": "broadwater-cord-short"
+      "group": "broadwater-cord-short",
+      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
       "id": "broadwater-cord-short-salmon",
@@ -412,7 +430,9 @@
           "5XL": false
         }
       },
-      "group": "broadwater-cord-short"
+      "group": "broadwater-cord-short",
+      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
       "id": "seaway-swim-short-pelagic",
@@ -481,7 +501,9 @@
           "16": true
         }
       },
-      "group": "ladies-broadwater-cord-short"
+      "group": "ladies-broadwater-cord-short",
+      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
       "id": "ladies-broadwater-cord-short-navy",
@@ -514,7 +536,9 @@
           "16": false
         }
       },
-      "group": "ladies-broadwater-cord-short"
+      "group": "ladies-broadwater-cord-short",
+      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
       "id": "ladies-broadwater-cord-short-salmon",
@@ -547,7 +571,9 @@
           "16": true
         }
       },
-      "group": "ladies-broadwater-cord-short"
+      "group": "ladies-broadwater-cord-short",
+      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
       "id": "dad-cap",
@@ -581,7 +607,8 @@
         "Sky Blue": {
           "One size": true
         }
-      }
+      },
+      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel."
     },
     {
       "id": "ripstop-cap",
@@ -642,7 +669,8 @@
           "One size": true
         }
       },
-      "price": 49.99
+      "price": 49.99,
+      "desc": "Our Ladies caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel."
     }
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows

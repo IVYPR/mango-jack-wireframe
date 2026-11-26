@@ -35,8 +35,7 @@
       <button class="btn" type="button" data-add>Add to bag <span aria-hidden="true">→</span></button>
       <p class="small">Free standard delivery within Australia · Easy returns</p>
       <div class="acc">
-        <details open><summary>Details</summary><p id="pDetails"></p></details>
-        <details><summary>Fabric and care</summary><p>[Fabric composition, weight and UPF rating.] Cold wash, line dry in the shade.</p></details>
+        <details open><summary>Fabric and fit</summary><p id="pDetails"></p></details>
         <details><summary>Delivery and returns</summary><p>Complimentary standard delivery within Australia. Returns accepted within [XX] days of delivery. See the refund policy for details.</p></details>
       </div>
     </div>
@@ -56,11 +55,6 @@
 <script>
 {
   const { PRODUCTS, CATS, CAT_LONG, tile, esc } = MJ;
-  const COPY = {
-    tees: ['Unisex fit, cut for long days on the sand and short nights by the fire.', 'Relaxed unisex fit · Soft-hand screen print · [Fabric] cotton'],
-    shorts: ['Just as at home on the saltwater as it is on the sofa. Comfy enough for the daily, smart enough for a barbie at the neighbours.', 'Elastic waist with drawcord · Side pockets · Mango Jack patch on the leg'],
-    headwear: ['Sun on, glare off. Built for early starts and late finishes on the water.', 'Adjustable back · Embroidered Mango Jack patch · One size fits most']
-  };
   const SIZES = { tees: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], shorts: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], headwear: ['One size'] };
   const inStock = (p, col, size) => !p.stock || !p.stock[col] || p.stock[col][size] !== false;
   const drawSizes = () => {
@@ -90,8 +84,8 @@
     document.getElementById('pName').textContent = p.name;
     document.getElementById('pPrice').textContent = MJ.priceText(p);
     document.getElementById('pTag').textContent = (p.tag ? p.tag + ' · ' : '') + (p.fit || (p.cat === 'headwear' ? 'Headwear' : 'Unisex'));
-    document.getElementById('pDesc').textContent = COPY[p.cat][0];
-    document.getElementById('pDetails').textContent = COPY[p.cat][1];
+    document.getElementById('pDesc').textContent = p.desc || '[Product description to come from the Shopify listing]';
+    document.getElementById('pDetails').textContent = p.fabric || (p.cat === 'headwear' ? 'One size.' : '[Fabric and weight to come]');
     const cc = document.getElementById('crumbCat'); cc.textContent = CAT_LONG[p.cat]; cc.href = 'shop.html#' + p.cat;
 
     drawGallery();
