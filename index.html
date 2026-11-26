@@ -63,7 +63,7 @@
   </section>
 
   <section class="feature" aria-labelledby="short-title" style="position:relative">
-    <a class="pimg" data-feat-link href="product.html#broadwater-cord-short-navy" aria-label="See the Broadwater Cord Short"><img id="featImg" src="assets/products/broadwater-cord-short-navy-front.jpg" loading="lazy" alt="Mango Jack Broadwater Cord Short in navy."></a>
+    <div class="feat-colours" id="featImgs" role="group" aria-label="Choose a colour"></div>
     <div class="buy" id="featureBuy">
       <div>
         <span class="label">New · Men's</span>
@@ -120,17 +120,19 @@
     const def = avail.includes('M') ? 'M' : (avail[0] || 'M');
     sizeWrap.innerHTML = SZ.map((x) => { const oos = st[x] === false; return `<button class="chip${oos ? ' oos' : ''}" type="button" data-size aria-pressed="${x === def}"${oos ? ` data-oos="1" aria-label="${x}, sold out"` : ''}>${x}</button>`; }).join('');
     colWrap.innerHTML = MJ.siblings(cord).map((s) => `<button class="chip" type="button" data-to="${s.id}" aria-pressed="${s.id === cord.id}">${s.colours[0].name}</button>`).join('');
-    const img = document.getElementById('featImg'); img.src = c.front; img.alt = 'Mango Jack Broadwater Cord Short in ' + c.name.toLowerCase() + '.';
+    document.getElementById('featImgs').innerHTML = MJ.siblings(cord).map((sib) => `<button type="button" class="feat-colour" data-to="${sib.id}" aria-pressed="${sib.id === cord.id}" aria-label="${sib.colours[0].name}"><span class="pimg"><img src="${sib.colours[0].front}" alt="" loading="lazy"></span><span class="feat-colour-name">${sib.colours[0].name}</span></button>`).join('');
     document.getElementById('featCol').textContent = c.name;
     document.getElementById('featPrice').textContent = MJ.priceText(cord);
     document.querySelectorAll('[data-feat-link]').forEach((a) => { a.href = 'product.html#' + cord.id; });
     if (featPicker) featPicker.reset();
   };
   drawFeature();
-  colWrap.addEventListener('click', (e) => {
+  const pickColour = (e) => {
     const b = e.target.closest('[data-to]'); if (!b) return;
     cord = PRODUCTS.find((p) => p.id === b.dataset.to); drawFeature();
-  });
+  };
+  colWrap.addEventListener('click', pickColour);
+  document.getElementById('featImgs').addEventListener('click', pickColour);
   featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => cord.id, () => cord.colours[0].name);
 
   // Shop the look

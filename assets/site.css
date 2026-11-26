@@ -108,7 +108,7 @@ header.site:not(.solid):not(.menu-open):not(.search-open) .navlink{text-shadow:0
 .film-msg{position:absolute;right:20px;top:20px;z-index:2;padding:12px;background:var(--ink);color:#fff;font-size:14px}
 
 /* Feature product (home) */
-.feature{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:7%;max-width:1100px;padding:clamp(50px,7vw,105px) 5%;margin:auto}
+.feature{display:grid;grid-template-columns:1.5fr 1fr;align-items:center;gap:5%;max-width:1320px;padding:clamp(50px,7vw,105px) 5%;margin:auto}
 .feature .h2{margin-bottom:20px}
 .copy{max-width:34ch;line-height:1.5;color:var(--ink-2)}
 .buy{display:flex;flex-direction:column;gap:20px}
@@ -254,3 +254,12 @@ body.pad-top main{padding-top:75px}
 /* Caption links sit on the headline's baseline, bottom right */
 .caption > .lightlink{align-self:flex-end;margin-bottom:.35em}
 @media (max-width:760px){.caption > .lightlink{align-self:flex-start;margin-bottom:0}}
+
+/* Home feature: every colour shown, click to choose */
+.feat-colours{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.feat-colour{display:flex;flex-direction:column;gap:8px;text-align:left;padding:0}
+.feat-colour .pimg{outline:1px solid transparent;outline-offset:-1px;transition:outline-color .15s}
+.feat-colour:hover .pimg{outline-color:var(--line-2)}
+.feat-colour[aria-pressed="true"] .pimg{outline:2px solid var(--ink);outline-offset:-2px}
+.feat-colour-name{font-size:12px;font-weight:500;letter-spacing:.065em;text-transform:uppercase;color:var(--ink-2)}
+.feat-colour[aria-pressed="true"] .feat-colour-name{color:var(--ink)}
