@@ -710,11 +710,14 @@
     { img: 'assets/looks/large-outline-tee.jpg', items: [['large-outline-regfit-tee', 'White']] },
     { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
+    { img: 'assets/looks/kids-ruby-beach-ute.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
     { img: 'assets/looks/kids-ruby-1.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
     { img: 'assets/looks/kids-ruby-2.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
     { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
-    { img: 'assets/looks/hoodie-beach-hug.jpg', items: [['game-boat-hoodie', 'White']] }
+    { img: 'assets/looks/hoodie-beach-hug.jpg', items: [['game-boat-hoodie', 'White']] },
+    { img: 'assets/looks/ladies-cap-pink-car.jpg', items: [['ladies-cap', 'Pink']] },
+    { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap', 'Beige']] }
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {
