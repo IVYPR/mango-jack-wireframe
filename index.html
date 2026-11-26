@@ -134,7 +134,8 @@
   featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => cord.id, () => cord.colours[0].name);
 
   // Shop the look
-  document.getElementById('homeLooks').innerHTML = MJ.LOOKS.slice(0, 4).map(MJ.lookTile).join('');
+  const HOME_LOOKS = ['offshore-beige-cord', 'ladies-mangrove-beige-cord', 'kids-crab', 'ripstop-white'];
+  document.getElementById('homeLooks').innerHTML = HOME_LOOKS.map((k) => MJ.LOOKS.find((l) => l.img.endsWith('/' + k + '.jpg'))).filter(Boolean).map(MJ.lookTile).join('');
 
   // Film: muted loop by default, sound and pause on request
   const player = document.getElementById('film-player');

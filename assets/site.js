@@ -675,6 +675,7 @@
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
+    { img: 'assets/looks/marlin-navy-beige-cord-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige'], ['marlin-compass-oversize-tee', 'Navy']] },
     { img: 'assets/looks/offshore-beige-cord.jpg', items: [['offshore-fishing-club-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['ladies-broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/kids-crab.jpg', items: [['kids-crab-tee', 'Azure Blue']] },
