@@ -104,7 +104,7 @@
 {
   const { PRODUCTS, tile, indexList } = MJ;
   document.getElementById('homeIndex').innerHTML = indexList('');
-  const pick = ['offshore-fishing-club-tee', 'broadwater-cord-short', 'dad-cap', 'outline-logo-oversized-tee'];
+  const pick = ['offshore-fishing-club-tee', 'broadwater-cord-short', 'dad-cap', 'marlin-compass-oversize-tee'];
   const showNew = (c) => {
     const list = c === 'all' ? pick.map((id) => PRODUCTS.find((p) => p.id === id)) : PRODUCTS.filter((p) => p.cat === c).slice(0, 4);
     document.getElementById('newIn').innerHTML = list.map(tile).join('');

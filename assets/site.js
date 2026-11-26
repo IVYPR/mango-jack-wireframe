@@ -16,23 +16,6 @@
       "tag": "New"
     },
     {
-      "id": "outline-logo-oversized-tee",
-      "name": "Outline Logo Oversized Tee",
-      "cat": "tees",
-      "colours": [
-        {
-          "name": "White",
-          "front": "assets/products/outline-logo-oversized-tee-white-front.jpg",
-          "back": "assets/products/outline-logo-oversized-tee-white-back.jpg"
-        },
-        {
-          "name": "Navy",
-          "front": "assets/products/outline-logo-oversized-tee-navy-front.jpg",
-          "back": "assets/products/outline-logo-oversized-tee-navy-back.jpg"
-        }
-      ]
-    },
-    {
       "id": "marlin-compass-oversize-tee",
       "name": "Marlin Compass Oversize Tee",
       "cat": "tees",
