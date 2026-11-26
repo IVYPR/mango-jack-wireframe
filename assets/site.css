@@ -250,3 +250,7 @@ body.pad-top main{padding-top:75px}
 .pimg .alt-look{object-fit:cover}
 .look .pimg .alt-flat{object-fit:contain;background:var(--paper-2)}
 @media (hover:hover){.look:hover .pimg .alt{opacity:1}}
+
+/* Caption links sit on the headline's baseline, bottom right */
+.caption > .lightlink{align-self:flex-end;margin-bottom:.35em}
+@media (max-width:760px){.caption > .lightlink{align-self:flex-start;margin-bottom:0}}
