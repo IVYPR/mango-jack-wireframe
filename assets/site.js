@@ -783,8 +783,7 @@
       <div><span class="label">Complete the look</span><div class="cl" id="bagCl"></div></div>
     </div>
     <div class="drawer-ft"><div class="row"><span class="label" style="margin:0">Subtotal</span><span id="subtotal">$0.00 AUD</span></div><button class="btn btn-wide" type="button">Checkout <span aria-hidden="true">→</span></button></div>
-  </aside>
-  <div class="draft" role="region" aria-label="Draft controls"><span>Wireframe draft</span><button type="button" id="toggleNotes" aria-pressed="false">Show notes</button></div>`;
+  </aside>`;
 
   document.body.id = 'top';
   document.getElementById('site-header').outerHTML = header;
@@ -887,7 +886,4 @@
     return { reset: () => { size = (root.querySelector('[data-size][aria-pressed="true"]') || {}).textContent || ''; btn.firstChild.textContent = 'Add to bag '; } };
   };
 
-  // Notes toggle
-  const tn = document.getElementById('toggleNotes');
-  tn.addEventListener('click', () => { const on = body.classList.toggle('notes'); tn.textContent = on ? 'Hide notes' : 'Show notes'; tn.setAttribute('aria-pressed', on); });
 }
