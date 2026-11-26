@@ -44,6 +44,33 @@
       "fabric": "Oversized Tee, 63% cotton 37% polyester 225gsm"
     },
     {
+      "id": "game-boat-hoodie",
+      "name": "Protech Flex Game Boat Hoodie",
+      "cat": "tees",
+      "colours": [
+        {
+          "name": "White",
+          "front": "assets/products/game-boat-hoodie-white-front.jpg",
+          "back": "assets/products/game-boat-hoodie-white-back.jpg"
+        }
+      ],
+      "price": 99.99,
+      "stock": {
+        "White": {
+          "XS": false,
+          "S": true,
+          "M": true,
+          "L": true,
+          "XL": true,
+          "2XL": true,
+          "3XL": true,
+          "4XL": false,
+          "5XL": false
+        }
+      },
+      "desc": "This design features a vintage-inspired game fishing boat design that celebrates a classic vessel from a bygone era and evokes a sense of offshore adventure, and that talks directly to the narrative of \"A life well fished\"."
+    },
+    {
       "id": "bar-and-grill-tee",
       "name": "Bar and Grill Tee",
       "cat": "tees",
@@ -686,7 +713,8 @@
     { img: 'assets/looks/kids-ruby-1.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
     { img: 'assets/looks/kids-ruby-2.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
     { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
-    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] }
+    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
+    { img: 'assets/looks/hoodie-beach-hug.jpg', items: [['game-boat-hoodie', 'White']] }
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {
