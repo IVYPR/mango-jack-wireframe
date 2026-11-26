@@ -372,7 +372,8 @@
       },
       "group": "broadwater-cord-short",
       "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
-      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm",
+      "fit": "Men's"
     },
     {
       "id": "broadwater-cord-short-navy",
@@ -402,7 +403,8 @@
       },
       "group": "broadwater-cord-short",
       "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
-      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm",
+      "fit": "Men's"
     },
     {
       "id": "broadwater-cord-short-salmon",
@@ -432,7 +434,8 @@
       },
       "group": "broadwater-cord-short",
       "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
-      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
+      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm",
+      "fit": "Men's"
     },
     {
       "id": "seaway-swim-short-pelagic",
