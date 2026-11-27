@@ -295,6 +295,7 @@ body.pad-top main{padding-top:75px}
 .outfit-total .opt-label{margin:0}
 @media (max-width:860px){
   .outfit-head,.outfit{grid-template-columns:1fr}
+  .outfit-head{row-gap:18px}
   .outfits{padding:40px 22px}
 }
 
