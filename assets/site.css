@@ -296,3 +296,14 @@ body.pad-top main{padding-top:75px}
   .outfit-head,.outfit{grid-template-columns:1fr}
   .outfits{padding:40px 22px}
 }
+
+.board-wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+.board-wrap .board{width:100%}
+.board{transition:opacity .22s}
+.board.fade{opacity:0}
+.refresh{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 20px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:500;letter-spacing:.065em;text-transform:uppercase;color:var(--ink);cursor:pointer}
+.refresh:hover{border-color:var(--ink)}
+.refresh svg{width:18px;height:18px;flex:none}
+.refresh.spin svg{animation:mjspin .6s ease}
+@keyframes mjspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.board{transition:none}.refresh.spin svg{animation:none}}

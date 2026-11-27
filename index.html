@@ -68,13 +68,15 @@
         <span class="label">Mix and match</span>
         <h2 class="h2" id="outfit-title">Capsule collections</h2>
       </div>
-      <p class="copy">Six looks from the launch collection, top to toe. Swap a colour, pick your sizes and add the lot in one go.</p>
+      <p class="copy">A capsule from the launch collection, top to toe. Refresh the look for a new combination, swap a colour, pick your sizes and add the lot in one go.</p>
     </div>
-    <div class="outfit-tabs" id="outfitTabs" role="group" aria-label="Choose a look"></div>
     <div class="outfit">
-      <div class="board" id="outfitBoard" aria-hidden="true"></div>
+      <div class="board-wrap">
+        <div class="board" id="outfitBoard" aria-hidden="true"></div>
+        <button class="refresh" type="button" id="outfitRefresh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>Refresh the look</button>
+      </div>
       <div class="buy" id="outfitBuy">
-        <div><span class="label" id="outfitNo">Capsule collection</span><h3 class="h3" id="outfitName"></h3></div>
+        <div><span class="label">Capsule collection</span></div>
         <ul class="outfit-list" id="outfitList"></ul>
         <div class="outfit-total"><span class="opt-label">Total</span><span id="outfitTotal"></span></div>
         <button class="btn" type="button" id="outfitAdd">Add all to bag <span aria-hidden="true">→</span></button>
@@ -119,10 +121,6 @@
     return o.includes(prev) ? prev : (o.includes('M') ? 'M' : (o[0] || ''));
   };
   const drawOutfit = () => {
-    const o = OUTFITS[oi];
-    document.querySelectorAll('#outfitTabs button').forEach((b, i) => b.setAttribute('aria-pressed', i === oi));
-    document.getElementById('outfitNo').textContent = `Capsule collection · ${oi + 1} of ${OUTFITS.length}`;
-    document.getElementById('outfitName').textContent = o.name;
     const [tee, short, cap] = cur.map(byId);
     document.getElementById('outfitBoard').innerHTML =
       `<img class="b-tee" src="${tee.colours[0].front}" alt=""><img class="b-short" src="${short.colours[0].front}" alt=""><img class="b-cap" src="${cap.colours[0].front}" alt="">`;
@@ -148,8 +146,12 @@
     const btn = document.getElementById('outfitAdd'); btn.firstChild.textContent = 'Add all to bag ';
   };
   const loadOutfit = (i) => { oi = i; cur = OUTFITS[i].items.slice(); sizes = cur.map((id) => pickSize(byId(id), 'M')); drawOutfit(); };
-  document.getElementById('outfitTabs').innerHTML = OUTFITS.map((o, i) => `<button type="button" data-o="${i}" aria-pressed="false">${o.name}</button>`).join('');
-  document.getElementById('outfitTabs').addEventListener('click', (e) => { const b = e.target.closest('[data-o]'); if (b) loadOutfit(+b.dataset.o); });
+  const refreshBtn = document.getElementById('outfitRefresh'), board = document.getElementById('outfitBoard');
+  refreshBtn.addEventListener('click', () => {
+    refreshBtn.classList.remove('spin'); void refreshBtn.offsetWidth; refreshBtn.classList.add('spin');
+    board.classList.add('fade');
+    setTimeout(() => { loadOutfit((oi + 1) % OUTFITS.length); board.classList.remove('fade'); }, 220);
+  });
   document.getElementById('outfitList').addEventListener('click', (e) => {
     const b = e.target.closest('[data-to]'); if (!b) return;
     const i = +b.dataset.row; cur[i] = b.dataset.to; sizes[i] = pickSize(byId(cur[i]), sizes[i]); drawOutfit();
