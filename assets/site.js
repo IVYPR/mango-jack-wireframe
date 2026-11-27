@@ -186,27 +186,6 @@
       "group": "dad-cap"
     },
     {
-      "id": "dad-cap-navy",
-      "name": "Dad Cap",
-      "cat": "headwear",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/dad-cap-navy-front.jpg",
-          "back": "assets/products/dad-cap-navy-back.jpg"
-        }
-      ],
-      "price": 49.99,
-      "stock": {
-        "Navy": {
-          "One size": false
-        }
-      },
-      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
-      "fit": "Men's",
-      "group": "dad-cap"
-    },
-    {
       "id": "dad-cap-sky-blue",
       "name": "Dad Cap",
       "cat": "headwear",
@@ -226,6 +205,27 @@
       "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
       "fit": "Men's",
       "group": "dad-cap"
+    },
+    {
+      "id": "dad-cap-navy",
+      "name": "Dad Cap",
+      "cat": "headwear",
+      "colours": [
+        {
+          "name": "Navy",
+          "front": "assets/products/dad-cap-navy-front.jpg",
+          "back": "assets/products/dad-cap-navy-back.jpg"
+        }
+      ],
+      "price": 49.99,
+      "stock": {
+        "Navy": {
+          "One size": false
+        }
+      },
+      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
+      "fit": "Men's",
+      "group": "dad-cap"
     }
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
@@ -240,6 +240,7 @@
     { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
+    { img: 'assets/looks/dad-cap-beige-driftwood.jpg', items: [['dad-cap-beige', 'Beige']] },
     { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap-beige', 'Beige']] },
     { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/murray-cod-tee-line.jpg', items: [['murray-cod-fresh-tee', 'White']] },
