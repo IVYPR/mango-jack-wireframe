@@ -77,7 +77,6 @@
         <div class="board" id="outfitBoard" aria-hidden="true"></div>
       </div>
       <div class="buy" id="outfitBuy">
-        <div><span class="label">Capsule collection</span></div>
         <ul class="outfit-list" id="outfitList"></ul>
         <div class="outfit-total"><span class="opt-label">Total</span><span id="outfitTotal"></span></div>
         <button class="btn" type="button" id="outfitAdd">Add all to bag <span aria-hidden="true">→</span></button>
@@ -101,7 +100,7 @@
   };
   document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
   showNew('all');
-  // Capsule collections: six flatlay looks, each piece swappable by colour and size
+  // Launch collection looks: flatlay outfits, each piece swappable by colour and size
   const OUTFITS = [
     { name: 'Look one', items: ['sand-whiting-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
     { name: 'Look two', items: ['mangrove-jack-tee', 'broadwater-cord-short-salmon', 'dad-cap-navy'] },
