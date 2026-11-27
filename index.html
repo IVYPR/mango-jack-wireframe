@@ -122,14 +122,14 @@
     document.getElementById('outfitBoard').innerHTML =
       `<img class="b-tee" src="${tee.colours[0].front}" alt=""><img class="b-short" src="${short.colours[0].front}" alt=""><img class="b-cap" src="${cap.colours[0].front}" alt="">`;
     document.getElementById('outfitList').innerHTML = cur.map((id, i) => {
-      const p = byId(id); const c = p.colours[0].name; const sib = MJ.siblings(p);
+      const p = byId(id); const c = p.colours[0].name; const isTee = p.cat === 'tees'; const sib = isTee ? PRODUCTS.filter((x) => x.cat === 'tees') : MJ.siblings(p);
       const opts = sizeOpts(p); const allOut = opts.every((z) => z.oos);
       return `<li class="o-row">
         <a class="o-thumb pimg" href="product.html#${p.id}"><img src="${p.colours[0].front}" alt=""></a>
         <div class="o-info">
           <a class="o-name" href="product.html#${p.id}">${MJ.esc(p.name)}</a>
           <span class="o-col">${MJ.esc(c)}</span>
-          ${sib.length > 1 ? `<div class="o-sw" role="group" aria-label="Colour">${sib.map((s) => `<button type="button" class="swatch" data-row="${i}" data-to="${s.id}" aria-pressed="${s.id === p.id}" aria-label="${s.colours[0].name}" style="--sw:${MJ.SWATCH[s.colours[0].name] || '#ccc'}"></button>`).join('')}</div>` : ''}
+          ${sib.length > 1 ? `<div class="o-sw" role="group" aria-label="${isTee ? 'Tee' : 'Colour'}">${sib.map((s) => `<button type="button" class="swatch${isTee ? ' tee' : ''}" data-row="${i}" data-to="${s.id}" aria-pressed="${s.id === p.id}" aria-label="${MJ.esc(isTee ? s.name : s.colours[0].name)}" title="${MJ.esc(isTee ? s.name : s.colours[0].name)}" style="--sw:${isTee ? 'transparent' : (MJ.SWATCH[s.colours[0].name] || '#ccc')}">${isTee ? `<span style="background-image:url('${s.colours[0].front}')"></span>` : ''}</button>`).join('')}</div>` : ''}
         </div>
         <div class="o-side">
           <span class="o-price">${MJ.priceText(p)}</span>
