@@ -270,7 +270,7 @@
       "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
     },
     {
-      "id": "dad-cap",
+      "id": "dad-cap-beige",
       "name": "Dad Cap",
       "cat": "headwear",
       "colours": [
@@ -278,12 +278,44 @@
           "name": "Beige",
           "front": "assets/products/dad-cap-beige-front.jpg",
           "back": "assets/products/dad-cap-beige-back.jpg"
-        },
+        }
+      ],
+      "price": 49.99,
+      "stock": {
+        "Beige": {
+          "One size": true
+        }
+      },
+      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
+      "fit": "Men's",
+      "group": "dad-cap"
+    },
+    {
+      "id": "dad-cap-navy",
+      "name": "Dad Cap",
+      "cat": "headwear",
+      "colours": [
         {
           "name": "Navy",
           "front": "assets/products/dad-cap-navy-front.jpg",
           "back": "assets/products/dad-cap-navy-back.jpg"
-        },
+        }
+      ],
+      "price": 49.99,
+      "stock": {
+        "Navy": {
+          "One size": false
+        }
+      },
+      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
+      "fit": "Men's",
+      "group": "dad-cap"
+    },
+    {
+      "id": "dad-cap-sky-blue",
+      "name": "Dad Cap",
+      "cat": "headwear",
+      "colours": [
         {
           "name": "Sky Blue",
           "front": "assets/products/dad-cap-sky-blue-front.jpg",
@@ -292,18 +324,13 @@
       ],
       "price": 49.99,
       "stock": {
-        "Beige": {
-          "One size": true
-        },
-        "Navy": {
-          "One size": false
-        },
         "Sky Blue": {
           "One size": true
         }
       },
       "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
-      "fit": "Men's"
+      "fit": "Men's",
+      "group": "dad-cap"
     }
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
@@ -318,7 +345,7 @@
     { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
-    { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap', 'Beige']] },
+    { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap-beige', 'Beige']] },
     { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/murray-cod-tee-line.jpg', items: [['murray-cod-fresh-tee', 'White']] },
     { img: 'assets/looks/sand-whiting-tee-line.jpg', items: [['sand-whiting-tee', 'Beige']] },
@@ -341,7 +368,7 @@
   const money = (n) => '$' + n.toFixed(2);
   const priceText = (p) => p.price ? money(p.price) : '[$PRICE]';
   const soldOut = (p) => !!p.stock && Object.values(p.stock).every((c) => Object.values(c).every((v) => !v));
-  const SWATCH = { Beige: '#d8cbb2', Navy: '#1f2a44', Salmon: '#e19a87' };
+  const SWATCH = { Beige: '#d8cbb2', Navy: '#1f2a44', Salmon: '#e19a87', 'Sky Blue': '#3b8de6', White: '#f4f1e8' };
   const siblings = (p) => p.group ? PRODUCTS.filter((x) => x.group === p.group) : [p];
   const swatches = (p) => p.group ? `<div class="swatches" role="group" aria-label="Colour">${siblings(p).map((s) => `<button type="button" class="swatch" data-to="${s.id}" aria-pressed="${s.id === p.id}" aria-label="${esc(s.colours[0].name)}" title="${esc(s.colours[0].name)}" style="--sw:${SWATCH[s.colours[0].name] || '#ccc'}"></button>`).join('')}</div>` : '';
   const tile = (p) => {
@@ -382,7 +409,7 @@
     <div class="mega" id="mega">
       <div class="mega-inner">
         <div>
-          <span class="label">Summer 26 · The first collection</span>
+          <span class="label">Summer 26 · The launch collection</span>
           <nav class="index" aria-label="Shop categories">${indexList('')}<a href="shop.html">Shop all<small>${PRODUCTS.length}</small><span aria-hidden="true">↗</span></a></nav>
           <p class="only-sm" style="gap:22px;margin-top:18px"><a class="navlink" href="about.html">Our story</a><a class="navlink" href="contact.html">Contact</a><button class="navlink" type="button" id="searchBtn2">Search</button></p>
         </div>

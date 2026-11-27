@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Mango Jack · Summer 26 (Draft)</title>
+<title>Mango Jack · The launch collection (Draft)</title>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body data-hero="1">
@@ -15,8 +15,8 @@
   <section class="media shade hero" aria-label="Summer 26 campaign">
     <img class="bg" src="assets/hero.jpg" alt="A father and child rigging their fishing line on the beach." fetchpriority="high">
     <div class="caption">
-      <div><span class="label">Summer 26</span><h1>A life well fished.</h1></div>
-      <a class="lightlink" href="#collection">Shop the collection <span aria-hidden="true">↓</span></a>
+      <div><span class="label">The launch collection</span><h1>A life well fished.</h1></div>
+      <a class="lightlink" href="#collection">Shop the launch collection <span aria-hidden="true">↓</span></a>
     </div>
   </section>
 
@@ -38,7 +38,7 @@
     <div class="photo"><img src="assets/kids-beach.jpg" alt="Four kids on the beach in Mango Jack tees." loading="lazy"></div>
     <div class="side">
       <span class="label">Summer 26</span>
-      <h2 class="h2" id="collection-title">The first collection</h2>
+      <h2 class="h2" id="collection-title">The launch collection</h2>
       <nav class="index" aria-label="Shop the launch categories" id="homeIndex"></nav>
       <a class="textlink" href="shop.html">Shop all <span aria-hidden="true">↗</span></a>
     </div>
@@ -98,7 +98,7 @@
 {
   const { PRODUCTS, tile, indexList } = MJ;
   document.getElementById('homeIndex').innerHTML = indexList('');
-  const pick = ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap', 'sand-whiting-tee'];
+  const pick = ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-beige', 'sand-whiting-tee'];
   const showNew = (c) => {
     const list = c === 'all' ? pick.map((id) => PRODUCTS.find((p) => p.id === id)) : PRODUCTS.filter((p) => p.cat === c).slice(0, 4);
     document.getElementById('newIn').innerHTML = list.map(tile).join('');
