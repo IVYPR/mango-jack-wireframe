@@ -66,15 +66,15 @@
     <div class="outfit-head">
       <div>
         <span class="label">Mix and match</span>
-        <h2 class="h2" id="outfit-title">Shop the collection</h2>
+        <h2 class="h2" id="outfit-title">Capsule collections</h2>
       </div>
-      <p class="copy">Five ways to wear the launch collection, top to toe. Swap a colour, pick your sizes and add the lot in one go.</p>
+      <p class="copy">Six looks from the launch collection, top to toe. Swap a colour, pick your sizes and add the lot in one go.</p>
     </div>
-    <div class="outfit-tabs" id="outfitTabs" role="group" aria-label="Choose a combination"></div>
+    <div class="outfit-tabs" id="outfitTabs" role="group" aria-label="Choose a look"></div>
     <div class="outfit">
       <div class="board" id="outfitBoard" aria-hidden="true"></div>
       <div class="buy" id="outfitBuy">
-        <div><span class="label" id="outfitNo">Combination 1 of 5</span><h3 class="h3" id="outfitName"></h3></div>
+        <div><span class="label" id="outfitNo">Capsule collection</span><h3 class="h3" id="outfitName"></h3></div>
         <ul class="outfit-list" id="outfitList"></ul>
         <div class="outfit-total"><span class="opt-label">Total</span><span id="outfitTotal"></span></div>
         <button class="btn" type="button" id="outfitAdd">Add all to bag <span aria-hidden="true">→</span></button>
@@ -98,13 +98,14 @@
   };
   document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
   showNew('all');
-  // Shop the collection: five flatlay combinations, each piece swappable by colour and size
+  // Capsule collections: six flatlay looks, each piece swappable by colour and size
   const OUTFITS = [
-    { name: 'The Sand Flats', items: ['sand-whiting-tee', 'broadwater-cord-short-salmon', 'dad-cap-beige'] },
-    { name: 'The Estuary', items: ['mangrove-jack-tee', 'broadwater-cord-short-beige', 'dad-cap-sky-blue'] },
-    { name: 'The Freshwater', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
-    { name: 'Last Light', items: ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-navy'] },
-    { name: 'Low Tide', items: ['sand-whiting-tee', 'broadwater-cord-short-navy', 'dad-cap-sky-blue'] }
+    { name: 'Look one', items: ['mangrove-jack-tee', 'broadwater-cord-short-salmon', 'dad-cap-beige'] },
+    { name: 'Look two', items: ['sand-whiting-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
+    { name: 'Look three', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-salmon', 'dad-cap-sky-blue'] },
+    { name: 'Look four', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-salmon', 'dad-cap-navy'] },
+    { name: 'Look five', items: ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
+    { name: 'Look six', items: ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-sky-blue'] }
   ];
   const SIZE_LIST = { tees: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], shorts: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], headwear: ['One size'] };
   const byId = (id) => PRODUCTS.find((p) => p.id === id);
@@ -120,7 +121,7 @@
   const drawOutfit = () => {
     const o = OUTFITS[oi];
     document.querySelectorAll('#outfitTabs button').forEach((b, i) => b.setAttribute('aria-pressed', i === oi));
-    document.getElementById('outfitNo').textContent = `Combination ${oi + 1} of ${OUTFITS.length}`;
+    document.getElementById('outfitNo').textContent = `Capsule collection · ${oi + 1} of ${OUTFITS.length}`;
     document.getElementById('outfitName').textContent = o.name;
     const [tee, short, cap] = cur.map(byId);
     document.getElementById('outfitBoard').innerHTML =
@@ -147,7 +148,7 @@
     const btn = document.getElementById('outfitAdd'); btn.firstChild.textContent = 'Add all to bag ';
   };
   const loadOutfit = (i) => { oi = i; cur = OUTFITS[i].items.slice(); sizes = cur.map((id) => pickSize(byId(id), 'M')); drawOutfit(); };
-  document.getElementById('outfitTabs').innerHTML = OUTFITS.map((o, i) => `<button type="button" data-o="${i}" aria-pressed="false"><span class="o-n">${String(i + 1).padStart(2, '0')}</span>${o.name}</button>`).join('');
+  document.getElementById('outfitTabs').innerHTML = OUTFITS.map((o, i) => `<button type="button" data-o="${i}" aria-pressed="false">${o.name}</button>`).join('');
   document.getElementById('outfitTabs').addEventListener('click', (e) => { const b = e.target.closest('[data-o]'); if (b) loadOutfit(+b.dataset.o); });
   document.getElementById('outfitList').addEventListener('click', (e) => {
     const b = e.target.closest('[data-to]'); if (!b) return;
