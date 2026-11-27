@@ -98,7 +98,7 @@
 {
   const { PRODUCTS, tile, indexList } = MJ;
   document.getElementById('homeIndex').innerHTML = indexList('');
-  const pick = ['offshore-fishing-club-tee', 'broadwater-cord-short-navy', 'dad-cap', 'marlin-compass-oversize-tee'];
+  const pick = ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap', 'sand-whiting-tee'];
   const showNew = (c) => {
     const list = c === 'all' ? pick.map((id) => PRODUCTS.find((p) => p.id === id)) : PRODUCTS.filter((p) => p.cat === c).slice(0, 4);
     document.getElementById('newIn').innerHTML = list.map(tile).join('');
@@ -136,7 +136,7 @@
   featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => cord.id, () => cord.colours[0].name);
 
   // Shop the look
-  const HOME_LOOKS = ['offshore-beige-cord', 'ladies-mangrove-beige-cord', 'kids-crab', 'ripstop-white'];
+  const HOME_LOOKS = ['fish-tees-line', 'mangrove-salmon-cord', 'dad-cap-beige-car', 'beige-cord-detail-riverbank'];
   document.getElementById('homeLooks').innerHTML = HOME_LOOKS.map((k) => MJ.LOOKS.find((l) => l.img.endsWith('/' + k + '.jpg'))).filter(Boolean).map(MJ.lookTile).join('');
 
   // Film: muted loop by default, sound and pause on request

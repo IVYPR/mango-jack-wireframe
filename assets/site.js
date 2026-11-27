@@ -1,116 +1,7 @@
 /* Mango Jack draft · shared header, footer, bag and product data */
 {
-  // Real launch range from "New Product shots" (front + back flatlay per colour)
+  // Launch range: fish species tees, Broadwater Cord Shorts, Dad Cap
   const PRODUCTS = [
-    {
-      "id": "offshore-fishing-club-tee",
-      "name": "Offshore Fishing Club Tee",
-      "cat": "tees",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/offshore-fishing-club-tee-navy-front.jpg",
-          "back": "assets/products/offshore-fishing-club-tee-navy-back.jpg"
-        }
-      ],
-      "tag": "New"
-    },
-    {
-      "id": "marlin-compass-oversize-tee",
-      "name": "Marlin Compass Oversize Tee",
-      "cat": "tees",
-      "colours": [
-        {
-          "name": "White",
-          "front": "assets/products/marlin-compass-oversize-tee-white-front.jpg",
-          "back": "assets/products/marlin-compass-oversize-tee-white-back.jpg"
-        }
-      ],
-      "price": 69.99,
-      "stock": {
-        "White": {
-          "XS": false,
-          "S": true,
-          "M": true,
-          "L": true,
-          "XL": true,
-          "2XL": true,
-          "3XL": true,
-          "4XL": false,
-          "5XL": false
-        }
-      },
-      "desc": "This tee features a bold marlin graphic combined with a compass design and well-connected typography to evoke a strong offshore-inspired sense of adventure and angling excitement.",
-      "fabric": "Oversized Tee, 63% cotton 37% polyester 225gsm"
-    },
-    {
-      "id": "bar-and-grill-tee",
-      "name": "Bar and Grill Tee",
-      "cat": "tees",
-      "colours": [
-        {
-          "name": "Blue",
-          "front": "assets/products/bar-and-grill-tee-blue-front.jpg",
-          "back": "assets/products/bar-and-grill-tee-blue-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "outline-logo-regfit-tee",
-      "name": "Outline Logo Regular Fit Tee",
-      "cat": "tees",
-      "colours": [
-        {
-          "name": "White",
-          "front": "assets/products/outline-logo-regfit-tee-white-front.jpg",
-          "back": "assets/products/outline-logo-regfit-tee-white-back.jpg"
-        },
-        {
-          "name": "Navy",
-          "front": "assets/products/outline-logo-regfit-tee-navy-front.jpg",
-          "back": "assets/products/outline-logo-regfit-tee-navy-back.jpg"
-        }
-      ],
-      "price": 54.99,
-      "stock": {
-        "White": {
-          "XS": false,
-          "S": true,
-          "M": true,
-          "L": true,
-          "XL": true,
-          "2XL": true,
-          "3XL": true,
-          "4XL": false,
-          "5XL": false
-        },
-        "Navy": {
-          "XS": false,
-          "S": true,
-          "M": true,
-          "L": true,
-          "XL": true,
-          "2XL": true,
-          "3XL": true,
-          "4XL": false,
-          "5XL": false
-        }
-      },
-      "desc": "A clean, easy-wearing design made to pair effortlessly with your favourite shorts or boardies. Featuring a simple outline logo, the understated design makes it an easy choice for everyday wear without losing that relaxed saltwater feel.",
-      "fabric": "Reg Fit Tee, 100% cotton 195gsm"
-    },
-    {
-      "id": "large-outline-regfit-tee",
-      "name": "Large Outline Regular Fit Tee",
-      "cat": "tees",
-      "colours": [
-        {
-          "name": "White",
-          "front": "assets/products/large-outline-regfit-tee-white-front.jpg",
-          "back": "assets/products/large-outline-regfit-tee-white-back.jpg"
-        }
-      ]
-    },
     {
       "id": "murray-cod-fresh-tee",
       "name": "Murray Cod Fresh Tee",
@@ -168,181 +59,17 @@
       "fabric": "Reg Fit Tee, 100% cotton 195gsm"
     },
     {
-      "id": "noosa-north-reef-tee",
-      "name": "Noosa North Reef Tee",
+      "id": "mangrove-jack-tee",
+      "name": "Mangrove Jack Tee",
       "cat": "tees",
       "colours": [
         {
           "name": "White",
-          "front": "assets/products/noosa-north-reef-tee-white-front.jpg",
-          "back": "assets/products/noosa-north-reef-tee-white-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "ladies-fitted-tee",
-      "name": "Ladies Fitted Tee",
-      "cat": "tees",
-      "fit": "Ladies",
-      "colours": [
-        {
-          "name": "White",
-          "front": "assets/products/ladies-fitted-tee-white-front.jpg",
-          "back": "assets/products/ladies-fitted-tee-white-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "kids-crab-tee",
-      "name": "Kids Crab Tee",
-      "cat": "tees",
-      "fit": "Kids",
-      "colours": [
-        {
-          "name": "Azure Blue",
-          "front": "assets/products/kids-crab-tee-azure-blue-front.jpg",
-          "back": "assets/products/kids-crab-tee-azure-blue-back.jpg"
+          "front": "assets/products/mangrove-jack-tee-white-front.jpg",
+          "back": "assets/products/mangrove-jack-tee-white-front.jpg"
         }
       ],
-      "sizes": [
-        "4Y",
-        "6Y",
-        "8Y",
-        "10Y",
-        "12Y",
-        "14Y",
-        "16Y"
-      ],
-      "price": 54.99,
-      "stock": {
-        "Azure Blue": {
-          "4Y": false,
-          "6Y": false,
-          "8Y": false,
-          "10Y": false,
-          "12Y": false,
-          "14Y": false,
-          "16Y": false
-        }
-      },
-      "desc": "This tee design features everyone's favourite crustacean, the mighty mud crab, and has been arranged in a playful yet stylish print for kids who are living a life well fished.",
-      "fabric": "Youth Tee, 100% cotton 195gsm"
-    },
-    {
-      "id": "kids-gold-outline-tee",
-      "name": "Kids Gold Outline Tee",
-      "cat": "tees",
-      "fit": "Kids",
-      "colours": [
-        {
-          "name": "Blue",
-          "front": "assets/products/kids-gold-outline-tee-blue-front.jpg",
-          "back": "assets/products/kids-gold-outline-tee-blue-back.jpg"
-        }
-      ],
-      "sizes": [
-        "4Y",
-        "6Y",
-        "8Y",
-        "10Y",
-        "12Y",
-        "14Y",
-        "16Y"
-      ],
-      "price": 54.99,
-      "stock": {
-        "Blue": {
-          "4Y": false,
-          "6Y": false,
-          "8Y": false,
-          "10Y": false,
-          "12Y": false,
-          "14Y": false,
-          "16Y": false
-        }
-      },
-      "desc": "A clean, easy-wearing design made to pair effortlessly with your favourite shorts or boardies. Featuring a simple outline logo, the understated design makes it an easy choice for everyday wear without losing that relaxed saltwater feel.",
-      "fabric": "Youth Tee, 100% cotton 195gsm"
-    },
-    {
-      "id": "kids-ruby-bubble-tee",
-      "name": "Kids Ruby Bubble Tee",
-      "cat": "tees",
-      "fit": "Kids",
-      "colours": [
-        {
-          "name": "White",
-          "front": "assets/products/kids-ruby-bubble-tee-white-front.jpg",
-          "back": "assets/products/kids-ruby-bubble-tee-white-back.jpg"
-        }
-      ],
-      "sizes": [
-        "4Y",
-        "6Y",
-        "8Y",
-        "10Y",
-        "12Y",
-        "14Y",
-        "16Y"
-      ],
-      "price": 54.99,
-      "stock": {
-        "White": {
-          "4Y": true,
-          "6Y": true,
-          "8Y": true,
-          "10Y": true,
-          "12Y": true,
-          "14Y": false,
-          "16Y": false
-        }
-      },
-      "desc": "This design is a throwback to the original kids design that kicked things off for us back in 2012 and was one of our fan favourite prints. This tee is a perfect blend of youthful versatility, playful colour and durability.",
-      "fabric": "Youth Tee, 100% cotton 195gsm"
-    },
-    {
-      "id": "kids-sand-whiting-tee",
-      "name": "Kids Sand Whiting Tee",
-      "cat": "tees",
-      "fit": "Kids",
-      "colours": [
-        {
-          "name": "Cream",
-          "front": "assets/products/kids-sand-whiting-tee-cream-front.jpg",
-          "back": "assets/products/kids-sand-whiting-tee-cream-back.jpg"
-        }
-      ],
-      "sizes": [
-        "4Y",
-        "6Y",
-        "8Y",
-        "10Y",
-        "12Y",
-        "14Y",
-        "16Y"
-      ]
-    },
-    {
-      "id": "kids-yellow-bubble-tee",
-      "name": "Kids Yellow Bubble Tee",
-      "cat": "tees",
-      "fit": "Kids",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/kids-yellow-bubble-tee-navy-front.jpg",
-          "back": "assets/products/kids-yellow-bubble-tee-navy-back.jpg"
-        }
-      ],
-      "sizes": [
-        "4Y",
-        "6Y",
-        "8Y",
-        "10Y",
-        "12Y",
-        "14Y",
-        "16Y"
-      ]
+      "fabric": "Reg Fit Tee, 100% cotton 195gsm"
     },
     {
       "id": "broadwater-cord-short-beige",
@@ -436,42 +163,6 @@
       "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
       "fabric": "Corduroy Shorts, 100% cotton 340-350gsm",
       "fit": "Men's"
-    },
-    {
-      "id": "seaway-swim-short-pelagic",
-      "name": "Seaway Swim Short \u00b7 Pelagic Print",
-      "cat": "shorts",
-      "colours": [
-        {
-          "name": "Azure Blue",
-          "front": "assets/products/seaway-swim-short-pelagic-azure-blue-front.jpg",
-          "back": "assets/products/seaway-swim-short-pelagic-azure-blue-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "seaway-swim-short",
-      "name": "Seaway Swim Short",
-      "cat": "shorts",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/seaway-swim-short-navy-front.jpg",
-          "back": "assets/products/seaway-swim-short-navy-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "terry-towel-short",
-      "name": "Terry Towel Short",
-      "cat": "shorts",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/terry-towel-short-navy-front.jpg",
-          "back": "assets/products/terry-towel-short-navy-back.jpg"
-        }
-      ]
     },
     {
       "id": "ladies-broadwater-cord-short-beige",
@@ -611,98 +302,27 @@
           "One size": true
         }
       },
-      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel."
-    },
-    {
-      "id": "ripstop-cap",
-      "name": "Ripstop Cap",
-      "cat": "headwear",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/ripstop-cap-navy-front.jpg",
-          "back": "assets/products/ripstop-cap-navy-back.jpg"
-        },
-        {
-          "name": "White",
-          "front": "assets/products/ripstop-cap-white-front.jpg",
-          "back": "assets/products/ripstop-cap-white-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "bucket-hat",
-      "name": "Bucket Hat",
-      "cat": "headwear",
-      "colours": [
-        {
-          "name": "Blue",
-          "front": "assets/products/bucket-hat-blue-front.jpg",
-          "back": "assets/products/bucket-hat-blue-back.jpg"
-        }
-      ]
-    },
-    {
-      "id": "ladies-cap",
-      "name": "Ladies Cap",
-      "cat": "headwear",
-      "fit": "Ladies",
-      "colours": [
-        {
-          "name": "Pink",
-          "front": "assets/products/ladies-cap-pink-front.jpg",
-          "back": "assets/products/ladies-cap-pink-back.jpg"
-        },
-        {
-          "name": "White",
-          "front": "assets/products/ladies-cap-white-front.jpg",
-          "back": "assets/products/ladies-cap-white-back.jpg"
-        },
-        {
-          "name": "Light Blue",
-          "front": "assets/products/ladies-cap-light-blue-front.jpg",
-          "back": "assets/products/ladies-cap-light-blue-back.jpg"
-        }
-      ],
-      "stock": {
-        "Pink": {
-          "One size": true
-        },
-        "White": {
-          "One size": true
-        }
-      },
-      "price": 49.99,
-      "desc": "Our Ladies caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel."
+      "desc": "Our Dad caps feature a clean and understated embroidered MJ logo design and has the versatility for everyday wear without losing the relaxed saltwater feel.",
+      "fit": "Men's"
     }
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
+    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/beige-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
-    { img: 'assets/looks/marlin-navy-beige-cord-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige'], ['marlin-compass-oversize-tee', 'Navy']] },
-    { img: 'assets/looks/offshore-beige-cord.jpg', items: [['offshore-fishing-club-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] },
-    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['ladies-broadwater-cord-short-beige', 'Beige']] },
-    { img: 'assets/looks/kids-crab.jpg', items: [['kids-crab-tee', 'Azure Blue']] },
-    { img: 'assets/looks/ripstop-white.jpg', items: [['ripstop-cap', 'White']] },
-    { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['bar-and-grill-tee', 'Blue'], ['broadwater-cord-short-navy', 'Navy']] },
+    { img: 'assets/looks/marlin-navy-beige-cord-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/offshore-beige-cord.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['ladies-broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/navy-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
-    { img: 'assets/looks/large-outline-tee-hanging.jpg', items: [['large-outline-regfit-tee', 'White']] },
-    { img: 'assets/looks/large-outline-tee.jpg', items: [['large-outline-regfit-tee', 'White']] },
-    { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
-    { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['marlin-compass-oversize-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
-    { img: 'assets/looks/kids-ruby-beach-ute.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
-    { img: 'assets/looks/kids-ruby-1.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
-    { img: 'assets/looks/kids-ruby-2.jpg', items: [['kids-ruby-bubble-tee', 'White']] },
+    { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
+    { img: 'assets/looks/marlin-back-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/coral-trout-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
-    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['broadwater-cord-short-salmon', 'Salmon']] },
-    { img: 'assets/looks/ladies-cap-pink-car.jpg', items: [['ladies-cap', 'Pink']] },
     { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap', 'Beige']] },
-    { img: 'assets/looks/seaway-pelagic-wading.jpg', items: [['seaway-swim-short-pelagic', 'Azure Blue']] },
-    { img: 'assets/looks/ladies-cap-lightblue-riverbank.jpg', items: [['ladies-cap', 'Light Blue']] },
-    { img: 'assets/looks/ladies-fitted-tee-back-riverbank.jpg', items: [['ladies-fitted-tee', 'White'], ['ladies-cap', 'Light Blue']] },
-    { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['marlin-compass-oversize-tee', 'Navy'], ['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/murray-cod-tee-line.jpg', items: [['murray-cod-fresh-tee', 'White']] },
-    { img: 'assets/looks/sand-whiting-tee-line.jpg', items: [['sand-whiting-tee', 'Beige']] }
+    { img: 'assets/looks/sand-whiting-tee-line.jpg', items: [['sand-whiting-tee', 'Beige']] },
+    { img: 'assets/looks/fish-tees-line.jpg', items: [['sand-whiting-tee', 'Beige'], ['murray-cod-fresh-tee', 'White'], ['mangrove-jack-tee', 'White']] },
   ];
   // Looks for a product, matching colour first
   const looksFor = (id, colour) => {

@@ -72,7 +72,7 @@
     const c = current.colours.find((x) => x.name === colour) || current.colours[0];
     document.getElementById('gallery').innerHTML =
       `<div class="pimg"><img src="${c.front}" alt="${esc(current.name)} in ${esc(c.name)}, front"></div>` +
-      `<div class="pimg"><img src="${c.back}" alt="${esc(current.name)} in ${esc(c.name)}, back"></div>` +
+      (c.back && c.back !== c.front ? `<div class="pimg"><img src="${c.back}" alt="${esc(current.name)} in ${esc(c.name)}, back"></div>` : '') +
       (MJ.looksFor(current.id, c.name).slice(0, 4).map((l) => `<div class="pimg"><img src="${l.img}" alt="Model wearing ${esc(current.name)}" style="object-fit:cover" loading="lazy"></div>`).join('') ||
       '<div class="media" style="aspect-ratio:1/1"><span class="ph-name">On-body</span></div>');
   };
