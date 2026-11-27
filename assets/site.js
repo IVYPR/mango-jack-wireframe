@@ -230,8 +230,9 @@
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
-    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/beige-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/mangrove-relaxed-beige-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['broadwater-cord-short-salmon', 'Salmon']] },
     { img: 'assets/looks/marlin-navy-beige-cord-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/offshore-beige-cord.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['mangrove-jack-tee', 'White']] },
