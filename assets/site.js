@@ -230,6 +230,7 @@
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
+    { img: 'assets/looks/navy-cord-murray-wall.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/sand-whiting-sunset-fishing.jpg', items: [['sand-whiting-tee', 'Beige']] },
     { img: 'assets/looks/mangrove-jack-tee-4wd-door.jpg', items: [['mangrove-jack-tee', 'White']] },
     { img: 'assets/looks/beige-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
