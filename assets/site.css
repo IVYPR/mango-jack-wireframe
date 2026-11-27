@@ -268,6 +268,7 @@ body.pad-top main{padding-top:75px}
 .outfits{max-width:1320px;margin:auto;padding:clamp(50px,7vw,105px) 5%}
 .outfit-head{display:grid;grid-template-columns:1.5fr 1fr;gap:5%;align-items:end;margin-bottom:28px}
 .outfit-head .copy{margin:0}
+.outfit-intro{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
 .outfit-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:28px;overflow-x:auto}
 .outfit-tabs button{flex:none;padding:14px 18px 14px 0;margin-right:22px;font-size:12px;font-weight:500;letter-spacing:.065em;text-transform:uppercase;color:var(--ink-2);border-bottom:1px solid transparent;margin-bottom:-1px;white-space:nowrap;background:none}
 .outfit-tabs button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
