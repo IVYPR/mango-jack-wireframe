@@ -66,7 +66,7 @@
         {
           "name": "White",
           "front": "assets/products/mangrove-jack-tee-white-front.jpg",
-          "back": "assets/products/mangrove-jack-tee-white-front.jpg"
+          "back": "assets/products/mangrove-jack-tee-white-back.jpg"
         }
       ],
       "fabric": "Reg Fit Tee, 100% cotton 195gsm"
@@ -165,111 +165,6 @@
       "fit": "Men's"
     },
     {
-      "id": "ladies-broadwater-cord-short-beige",
-      "name": "Ladies Broadwater Cord Short",
-      "cat": "shorts",
-      "fit": "Ladies",
-      "colours": [
-        {
-          "name": "Beige",
-          "front": "assets/products/ladies-broadwater-cord-short-beige-front.jpg",
-          "back": "assets/products/ladies-broadwater-cord-short-beige-back.jpg"
-        }
-      ],
-      "sizes": [
-        "6",
-        "8",
-        "10",
-        "12",
-        "14",
-        "16"
-      ],
-      "price": 79.99,
-      "stock": {
-        "Beige": {
-          "6": false,
-          "8": true,
-          "10": true,
-          "12": true,
-          "14": true,
-          "16": true
-        }
-      },
-      "group": "ladies-broadwater-cord-short",
-      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
-      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
-    },
-    {
-      "id": "ladies-broadwater-cord-short-navy",
-      "name": "Ladies Broadwater Cord Short",
-      "cat": "shorts",
-      "fit": "Ladies",
-      "colours": [
-        {
-          "name": "Navy",
-          "front": "assets/products/ladies-broadwater-cord-short-navy-front.jpg",
-          "back": "assets/products/ladies-broadwater-cord-short-navy-back.jpg"
-        }
-      ],
-      "sizes": [
-        "6",
-        "8",
-        "10",
-        "12",
-        "14",
-        "16"
-      ],
-      "price": 79.99,
-      "stock": {
-        "Navy": {
-          "6": false,
-          "8": true,
-          "10": false,
-          "12": true,
-          "14": true,
-          "16": false
-        }
-      },
-      "group": "ladies-broadwater-cord-short",
-      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
-      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
-    },
-    {
-      "id": "ladies-broadwater-cord-short-salmon",
-      "name": "Ladies Broadwater Cord Short",
-      "cat": "shorts",
-      "fit": "Ladies",
-      "colours": [
-        {
-          "name": "Salmon",
-          "front": "assets/products/ladies-broadwater-cord-short-salmon-front.jpg",
-          "back": "assets/products/ladies-broadwater-cord-short-salmon-back.jpg"
-        }
-      ],
-      "sizes": [
-        "6",
-        "8",
-        "10",
-        "12",
-        "14",
-        "16"
-      ],
-      "price": 79.99,
-      "stock": {
-        "Salmon": {
-          "6": false,
-          "8": true,
-          "10": true,
-          "12": true,
-          "14": true,
-          "16": true
-        }
-      },
-      "group": "ladies-broadwater-cord-short",
-      "desc": "Our Broadwater Cord short is the ultimate in coastal comfort and effortless style. It blends undeniable class with a relaxed beach vibe.",
-      "fabric": "Corduroy Shorts, 100% cotton 340-350gsm"
-    },
-    {
       "id": "dad-cap-beige",
       "name": "Dad Cap",
       "cat": "headwear",
@@ -339,7 +234,7 @@
     { img: 'assets/looks/beige-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/marlin-navy-beige-cord-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/offshore-beige-cord.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
-    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['ladies-broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/ladies-mangrove-beige-cord.jpg', items: [['mangrove-jack-tee', 'White']] },
     { img: 'assets/looks/bar-grill-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/navy-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/marlin-front-navy-cord.jpg', items: [['broadwater-cord-short-navy', 'Navy']] },
