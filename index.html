@@ -68,7 +68,7 @@
         <span class="label">Mix and match</span>
         <h2 class="h2" id="outfit-title">Capsule collections</h2>
       </div>
-      <p class="copy">A capsule from the launch collection, top to toe. Refresh the look for a new combination, swap a colour, pick your sizes and add the lot in one go.</p>
+      <p class="copy">Three capsules from the launch collection, top to toe. Refresh the look to see the next one, swap a colour, pick your sizes and add the lot in one go.</p>
     </div>
     <div class="outfit">
       <div class="board-wrap">
@@ -102,12 +102,9 @@
   showNew('all');
   // Capsule collections: six flatlay looks, each piece swappable by colour and size
   const OUTFITS = [
-    { name: 'Look one', items: ['mangrove-jack-tee', 'broadwater-cord-short-salmon', 'dad-cap-beige'] },
-    { name: 'Look two', items: ['sand-whiting-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
-    { name: 'Look three', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-salmon', 'dad-cap-sky-blue'] },
-    { name: 'Look four', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-salmon', 'dad-cap-navy'] },
-    { name: 'Look five', items: ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
-    { name: 'Look six', items: ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-sky-blue'] }
+    { name: 'Look one', items: ['sand-whiting-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
+    { name: 'Look two', items: ['mangrove-jack-tee', 'broadwater-cord-short-salmon', 'dad-cap-navy'] },
+    { name: 'Look three', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-navy', 'dad-cap-sky-blue'] }
   ];
   const SIZE_LIST = { tees: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], shorts: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], headwear: ['One size'] };
   const byId = (id) => PRODUCTS.find((p) => p.id === id);
