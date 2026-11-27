@@ -268,7 +268,7 @@
   const money = (n) => '$' + n.toFixed(2);
   const priceText = (p) => p.price ? money(p.price) : '[$PRICE]';
   const soldOut = (p) => !!p.stock && Object.values(p.stock).every((c) => Object.values(c).every((v) => !v));
-  const SWATCH = { Beige: '#d8cbb2', Navy: '#1f2a44', Salmon: '#e19a87', 'Sky Blue': '#3b8de6', White: '#f4f1e8' };
+  const SWATCH = { Beige: '#d8cbb2', Navy: '#1f2a44', Salmon: '#e19a87', 'Sky Blue': '#5b93e2', White: '#f4f1e8' };
   const siblings = (p) => p.group ? PRODUCTS.filter((x) => x.group === p.group) : [p];
   const swatches = (p) => p.group ? `<div class="swatches" role="group" aria-label="Colour">${siblings(p).map((s) => `<button type="button" class="swatch" data-to="${s.id}" aria-pressed="${s.id === p.id}" aria-label="${esc(s.colours[0].name)}" title="${esc(s.colours[0].name)}" style="--sw:${SWATCH[s.colours[0].name] || '#ccc'}"></button>`).join('')}</div>` : '';
   const tile = (p) => {
