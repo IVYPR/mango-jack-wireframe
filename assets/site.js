@@ -244,6 +244,7 @@
     { img: 'assets/looks/dad-cap-beige-driftwood.jpg', items: [['dad-cap-beige', 'Beige']] },
     { img: 'assets/looks/dad-cap-beige-car.jpg', items: [['dad-cap-beige', 'Beige']] },
     { img: 'assets/looks/marlin-navy-beige-cord-walk.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
+    { img: 'assets/looks/murray-cod-laughing-navy-cord.jpg', items: [['murray-cod-fresh-tee', 'White'], ['broadwater-cord-short-navy', 'Navy']] },
     { img: 'assets/looks/murray-cod-tee-line.jpg', items: [['murray-cod-fresh-tee', 'White']] },
     { img: 'assets/looks/sand-whiting-tee-line.jpg', items: [['sand-whiting-tee', 'Beige']] },
     { img: 'assets/looks/fish-tees-line.jpg', items: [['sand-whiting-tee', 'Beige'], ['murray-cod-fresh-tee', 'White'], ['mangrove-jack-tee', 'White']] },
