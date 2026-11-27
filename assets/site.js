@@ -230,6 +230,7 @@
   ];
   // On-body model shots (AI-generated), each tagged with the products and colours it shows
   const LOOKS = [
+    { img: 'assets/looks/mangrove-jack-tee-4wd-door.jpg', items: [['mangrove-jack-tee', 'White']] },
     { img: 'assets/looks/beige-cord-detail-riverbank.jpg', items: [['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/mangrove-relaxed-beige-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['broadwater-cord-short-beige', 'Beige']] },
     { img: 'assets/looks/mangrove-salmon-cord.jpg', items: [['mangrove-jack-tee', 'White'], ['broadwater-cord-short-salmon', 'Salmon']] },
