@@ -62,32 +62,23 @@
     </div>
   </section>
 
-  <section class="feature" aria-labelledby="short-title" style="position:relative">
-    <div class="feat-colours" id="featImgs" role="group" aria-label="Choose a colour"></div>
-    <div class="buy" id="featureBuy">
+  <section class="outfits" aria-labelledby="outfit-title">
+    <div class="outfit-head">
       <div>
-        <span class="label">New · Men's</span>
-        <h2 class="h2" id="short-title">The Broadwater Cord Short</h2>
-        <p class="copy">Just as at home on the saltwater as it is on the sofa. Comfy enough for the daily, smart enough for a barbie at the neighbours.</p>
+        <span class="label">Mix and match</span>
+        <h2 class="h2" id="outfit-title">Shop the collection</h2>
       </div>
-      <div><span id="featPrice">[$PRICE]</span> AUD</div>
-      <div>
-        <span class="opt-label">Colour · <span id="featCol" style="margin-right:auto;margin-left:6px">Navy</span></span>
-        <div class="chips" id="featCols" role="group" aria-label="Colour"></div>
+      <p class="copy">Five ways to wear the launch collection, top to toe. Swap a colour, pick your sizes and add the lot in one go.</p>
+    </div>
+    <div class="outfit-tabs" id="outfitTabs" role="group" aria-label="Choose a combination"></div>
+    <div class="outfit">
+      <div class="board" id="outfitBoard" aria-hidden="true"></div>
+      <div class="buy" id="outfitBuy">
+        <div><span class="label" id="outfitNo">Combination 1 of 5</span><h3 class="h3" id="outfitName"></h3></div>
+        <ul class="outfit-list" id="outfitList"></ul>
+        <div class="outfit-total"><span class="opt-label">Total</span><span id="outfitTotal"></span></div>
+        <button class="btn" type="button" id="outfitAdd">Add all to bag <span aria-hidden="true">→</span></button>
       </div>
-      <div>
-        <span class="opt-label">Size <a href="contact.html#faq">Size guide</a></span>
-        <div class="chips" role="group" aria-label="Size">
-          <button class="chip" type="button" data-size aria-pressed="false">XS</button>
-          <button class="chip" type="button" data-size aria-pressed="false">S</button>
-          <button class="chip" type="button" data-size aria-pressed="true">M</button>
-          <button class="chip" type="button" data-size aria-pressed="false">L</button>
-          <button class="chip" type="button" data-size aria-pressed="false">XL</button>
-          <button class="chip oos" type="button" data-size data-oos="1" aria-pressed="false" aria-label="XXL, sold out">XXL</button>
-        </div>
-      </div>
-      <button class="btn" type="button" data-add>Add to bag <span aria-hidden="true">→</span></button>
-      <a class="textlink" data-feat-link href="product.html#broadwater-cord-short-navy">Full details <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 </main>
@@ -107,33 +98,70 @@
   };
   document.getElementById('qtabs').addEventListener('click', (e) => { const b = e.target.closest('[data-c]'); if (b) showNew(b.dataset.c); });
   showNew('all');
-  // Featured short: each colour is its own listing; the colour buttons switch between them
-  let cord = PRODUCTS.find((p) => p.id === 'broadwater-cord-short-navy');
-  const sizeWrap = document.querySelector('#featureBuy .chips[aria-label="Size"]');
-  const colWrap = document.getElementById('featCols');
-  const SZ = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
-  let featPicker = null;
-  const drawFeature = () => {
-    const c = cord.colours[0];
-    const st = (cord.stock && cord.stock[c.name]) || {};
-    const avail = SZ.filter((x) => st[x] !== false);
-    const def = avail.includes('M') ? 'M' : (avail[0] || 'M');
-    sizeWrap.innerHTML = SZ.map((x) => { const oos = st[x] === false; return `<button class="chip${oos ? ' oos' : ''}" type="button" data-size aria-pressed="${x === def}"${oos ? ` data-oos="1" aria-label="${x}, sold out"` : ''}>${x}</button>`; }).join('');
-    colWrap.innerHTML = MJ.siblings(cord).map((s) => `<button class="chip" type="button" data-to="${s.id}" aria-pressed="${s.id === cord.id}">${s.colours[0].name}</button>`).join('');
-    document.getElementById('featImgs').innerHTML = MJ.siblings(cord).map((sib) => `<button type="button" class="feat-colour" data-to="${sib.id}" aria-pressed="${sib.id === cord.id}" aria-label="${sib.colours[0].name}"><span class="pimg"><img src="${sib.colours[0].front}" alt="" loading="lazy"></span><span class="feat-colour-name">${sib.colours[0].name}</span></button>`).join('');
-    document.getElementById('featCol').textContent = c.name;
-    document.getElementById('featPrice').textContent = MJ.priceText(cord);
-    document.querySelectorAll('[data-feat-link]').forEach((a) => { a.href = 'product.html#' + cord.id; });
-    if (featPicker) featPicker.reset();
+  // Shop the collection: five flatlay combinations, each piece swappable by colour and size
+  const OUTFITS = [
+    { name: 'The Sand Flats', items: ['sand-whiting-tee', 'broadwater-cord-short-salmon', 'dad-cap-beige'] },
+    { name: 'The Estuary', items: ['mangrove-jack-tee', 'broadwater-cord-short-beige', 'dad-cap-sky-blue'] },
+    { name: 'The Freshwater', items: ['murray-cod-fresh-tee', 'broadwater-cord-short-navy', 'dad-cap-beige'] },
+    { name: 'Last Light', items: ['mangrove-jack-tee', 'broadwater-cord-short-navy', 'dad-cap-navy'] },
+    { name: 'Low Tide', items: ['sand-whiting-tee', 'broadwater-cord-short-navy', 'dad-cap-sky-blue'] }
+  ];
+  const SIZE_LIST = { tees: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], shorts: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'], headwear: ['One size'] };
+  const byId = (id) => PRODUCTS.find((p) => p.id === id);
+  let oi = 0, cur = [], sizes = [];
+  const sizeOpts = (p) => {
+    const st = (p.stock && p.stock[p.colours[0].name]) || {};
+    return (p.sizes || SIZE_LIST[p.cat]).map((x) => ({ x, oos: st[x] === false }));
   };
-  drawFeature();
-  const pickColour = (e) => {
+  const pickSize = (p, prev) => {
+    const o = sizeOpts(p).filter((z) => !z.oos).map((z) => z.x);
+    return o.includes(prev) ? prev : (o.includes('M') ? 'M' : (o[0] || ''));
+  };
+  const drawOutfit = () => {
+    const o = OUTFITS[oi];
+    document.querySelectorAll('#outfitTabs button').forEach((b, i) => b.setAttribute('aria-pressed', i === oi));
+    document.getElementById('outfitNo').textContent = `Combination ${oi + 1} of ${OUTFITS.length}`;
+    document.getElementById('outfitName').textContent = o.name;
+    const [tee, short, cap] = cur.map(byId);
+    document.getElementById('outfitBoard').innerHTML =
+      `<img class="b-tee" src="${tee.colours[0].front}" alt=""><img class="b-short" src="${short.colours[0].front}" alt=""><img class="b-cap" src="${cap.colours[0].front}" alt="">`;
+    document.getElementById('outfitList').innerHTML = cur.map((id, i) => {
+      const p = byId(id); const c = p.colours[0].name; const sib = MJ.siblings(p);
+      const opts = sizeOpts(p); const allOut = opts.every((z) => z.oos);
+      return `<li class="o-row">
+        <a class="o-thumb pimg" href="product.html#${p.id}"><img src="${p.colours[0].front}" alt=""></a>
+        <div class="o-info">
+          <a class="o-name" href="product.html#${p.id}">${MJ.esc(p.name)}</a>
+          <span class="o-col">${MJ.esc(c)}</span>
+          ${sib.length > 1 ? `<div class="o-sw" role="group" aria-label="Colour">${sib.map((s) => `<button type="button" class="swatch" data-row="${i}" data-to="${s.id}" aria-pressed="${s.id === p.id}" aria-label="${s.colours[0].name}" style="--sw:${MJ.SWATCH[s.colours[0].name] || '#ccc'}"></button>`).join('')}</div>` : ''}
+        </div>
+        <div class="o-side">
+          <span class="o-price">${MJ.priceText(p)}</span>
+          ${allOut ? '<span class="o-oos">Sold out</span>' : opts.length > 1 ? `<select data-size-row="${i}" aria-label="Size for ${MJ.esc(p.name)}">${opts.map((z) => `<option${z.oos ? ' disabled' : ''}${z.x === sizes[i] ? ' selected' : ''}>${z.x}${z.oos ? ' (sold out)' : ''}</option>`).join('')}</select>` : '<span class="o-one">One size</span>'}
+        </div>
+      </li>`;
+    }).join('');
+    const ps = cur.map(byId); const priced = ps.filter((p) => typeof p.price === 'number');
+    const tot = priced.reduce((t, p) => t + p.price, 0);
+    document.getElementById('outfitTotal').textContent = priced.length === ps.length ? MJ.money(tot) + ' AUD' : MJ.money(tot) + ' + [$PRICE]';
+    const btn = document.getElementById('outfitAdd'); btn.firstChild.textContent = 'Add all to bag ';
+  };
+  const loadOutfit = (i) => { oi = i; cur = OUTFITS[i].items.slice(); sizes = cur.map((id) => pickSize(byId(id), 'M')); drawOutfit(); };
+  document.getElementById('outfitTabs').innerHTML = OUTFITS.map((o, i) => `<button type="button" data-o="${i}" aria-pressed="false"><span class="o-n">${String(i + 1).padStart(2, '0')}</span>${o.name}</button>`).join('');
+  document.getElementById('outfitTabs').addEventListener('click', (e) => { const b = e.target.closest('[data-o]'); if (b) loadOutfit(+b.dataset.o); });
+  document.getElementById('outfitList').addEventListener('click', (e) => {
     const b = e.target.closest('[data-to]'); if (!b) return;
-    cord = PRODUCTS.find((p) => p.id === b.dataset.to); drawFeature();
-  };
-  colWrap.addEventListener('click', pickColour);
-  document.getElementById('featImgs').addEventListener('click', pickColour);
-  featPicker = MJ.sizePicker(document.getElementById('featureBuy'), () => cord.id, () => cord.colours[0].name);
+    const i = +b.dataset.row; cur[i] = b.dataset.to; sizes[i] = pickSize(byId(cur[i]), sizes[i]); drawOutfit();
+  });
+  document.getElementById('outfitList').addEventListener('change', (e) => {
+    const sel = e.target.closest('[data-size-row]'); if (sel) sizes[+sel.dataset.sizeRow] = sel.value;
+  });
+  document.getElementById('outfitAdd').addEventListener('click', () => {
+    let added = 0;
+    cur.forEach((id, i) => { const p = byId(id); if (sizes[i]) { MJ.addToBag(id, p.colours[0].name, sizes[i]); added++; } });
+    if (added < cur.length) document.getElementById('outfitAdd').firstChild.textContent = `Added ${added} of ${cur.length}, the rest are sold out `;
+  });
+  loadOutfit(0);
 
   // Shop the look
   const HOME_LOOKS = ['fish-tees-line', 'mangrove-salmon-cord', 'dad-cap-beige-car', 'beige-cord-detail-riverbank'];
